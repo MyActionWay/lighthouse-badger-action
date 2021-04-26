@@ -5,7 +5,7 @@
 <img src="https://img.shields.io/github/repo-size/myactionway/lighthouse-badger-action?label=RepoSize" /></p>
 <hr>
 
-The [Lighthouse-Badger](https://github.com/myactionway/lighthouse-badger-action "Get it") GitHub action makes it easy to manually/automatically generate, add and update Lighthouse badges and reports from one/multiple input URL(s) to a selected target repository. If you've it [set up](#-setup "Go there"), you only need to add the result links to your use case once. Then the [Lighthouse-Badger](https://github.com/myactionway/lighthouse-badger-action "Get it") will automatically keep the badges up to date for you. So sit back and let the Badger do the job :wink:.
+The [Lighthouse-Badger](https://github.com/myactionway/lighthouse-badger-action "Get it") GitHub action makes it easy to manually or automatically generate, add and update Lighthouse badges and reports from one/multiple input URL(s) to a selected target repository. If you've it [set up](#-setup "Go there"), you only need to add the result links to your use case once. Then the [Lighthouse-Badger](https://github.com/myactionway/lighthouse-badger-action "Get it") will automatically keep the badges up to date for you. So sit back and let the Badger do the job :wink:.
 
 ## | Credits
 
@@ -39,9 +39,9 @@ Examples: <a href="https://htmlpreview.github.io/?https://raw.githubusercontent.
 
 OK, let's do it.
 
-1. add the [`lighthouse-badger.yml`](https://github.com/MyActionWay/lighthouse-badger-workflow/blob/master/.github/workflows/lighthouse-badger.yml "Get it") workflow file to a repository
+1. add the [lighthouse-badger.yml](https://github.com/MyActionWay/lighthouse-badger-workflows/blob/master/.github/workflows/lighthouse-badger.yml "Get it") workflow file to a repository
 	* the path has to be `.github/workflows/lighthouse-badger.yml`
-	* it doesn't have to be the repository where you want to add the Lighthouse results; e.&nbsp;g., you can simply [fork](https://github.com/myactionway/lighthouse-badger-workflow/fork "fork it") the `myactionway/lighthouse-badger-workflow` repository
+	* it doesn't have to be the repository where you want to add the Lighthouse results; e.&nbsp;g., you can simply [fork](https://github.com/myactionway/lighthouse-badger-workflows/fork "fork it") the `myactionway/lighthouse-badger-workflows` repository
 		* CONSIDER: with a forked repository, you need to confirm that you want to use a workflow before you can actually use it (repo menu > actions tab > push the button)
 2. create a new encrypted repository secret [[procedure]](https://docs.github.com/en/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-a-repository "Learn how")
 	* add the secret to the same repository where you added the workflow file
@@ -49,7 +49,7 @@ OK, let's do it.
 	* the value of the secret must be the value of the personal access token for the repository where you want to add the Lighthouse results.
 		* [procedure for creating a personal access token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token "Learn how")
 		* select only the minimum scopes and permissions required e.&nbsp;g. repo
-3. adapt your `lighthouse-badger.yml` file
+3. adapt your [lighthouse-badger.yml](https://github.com/MyActionWay/lighthouse-badger-workflows/blob/master/.github/workflows/lighthouse-badger.yml "Get it") file
 	* for manual triggers
 		* all you have to do is enter your secret name e.&nbsp;g. `LIGHTHOUSE_BADGER_TOKEN`
 			```yml
@@ -60,7 +60,7 @@ OK, let's do it.
 			* CONSIDER: never enter the actual value of the personal access token
 		* [procedure for manually running a workflow on GitHub](https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow#running-a-workflow-on-github "Learn how")
 			<img src="https://raw.githubusercontent.com/sitdisch/cloud/master/images/lighthousebadger_manual_inputs.png" />
-			* CONSIDER: currently, you can't change the token in the UI
+			* CONSIDER: currently, you can't change the `TOKEN` in the UI
 		* [procedure for manually running a workflow using the REST API](https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow#running-a-workflow-using-the-rest-api)
 	* for all other triggers
 		* adapt this section
@@ -95,7 +95,7 @@ OK, let's do it.
 		* CONSIDER:
 			* token: never enter the actual value of the personal access token
 			* inputs:
-				* you only have to insert `URLS;` if any other input is blank, one of these default values will be used instead
+				* you only have to insert `URLS`; if any other input is blank, one of these default values will be used instead
 					```yml
 					DEFAULT-REPOSITORY: ${{ github.repository }} # repo with this file
 					DEFAULT-BRANCH: 'master'
