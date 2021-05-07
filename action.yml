@@ -1,17 +1,18 @@
 # Lighthouse-Badger | GitHub Action
 # 
-# Description: Generates, adds & updates manually/automatically Lighthouse badges & reports from one/multiple input URL(s) to a selected target repository
+# Description: Generates, adds & updates manually/automatically Lighthouse badges & reports from one/multiple input URL-group(s) to one/multiple target repo(s)/branch(es)
 # Author: Sitdisch
+# Version: v1.1
 # Source: https://github.com/myactionway/lighthouse-badger-action
 # License: MIT
 # Copyright (c) 2021 Sitdisch
 
 name: 'Lighthouse-Badger'
 author: 'Sitdisch'
-description: "Generates, adds & updates manually/automatically Lighthouse badges & reports from 1,2... input URL(s) to a target repository"
+description: "Generates, adds & updates manually/automatically Lighthouse badges & reports from 1,2... URL(s) to 1,2... repo(s)/branch(es)"
 branding:
   icon: bold
-  color: purple
+  color: white
 
 inputs:
   urls:
@@ -42,40 +43,28 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: Preparatory Tasks
-      run: |
-        echo 'export RESULTS_PATH=`expr "${{ inputs.badges-args }}" : ".* --\?ou\?t\?p\?u\?t\?-\?p\?a\?t\?h\? \([^ ]*\).*"`' >> ~/lighthouse_badger_env.txt
-        echo 'export BADGES_ARGS=$(sed -e "s/ \(\(--output-path\)\|\(-o\)\) \S*//g" <<< "${{ inputs.badges-args }}" )' >> ~/lighthouse_badger_env.txt
-        source ~/lighthouse_badger_env.txt
+    - run: |
+        RESULTS_PATH=`expr "${{ inputs.badges-args }}" : ".* --\?ou\?t\?p\?u\?t\?-\?p\?a\?t\?h\? \([^ ]*\).*"`;
+        BADGES_ARGS=$(sed -e "s/ \(\(--output-path\)\|\(-o\)\) \S*//g" <<< "${{ inputs.badges-args }}" );
         mkdir -p $RESULTS_PATH
-      shell: bash
-    - name: Create Mobile Results
-      run: |
-        if [ ${{ inputs.results-type }} = "both" ] || [ ${{ inputs.results-type }} = "mobile" ]; then
-          source ~/lighthouse_badger_env.txt
-          cd temp_lighthouse_badges_nested
-          export LIGHTHOUSE_BADGES_PARAMS="${{ inputs.mobile-lighthouse-params }}"
-          ./src/index.js -u ${{ inputs.urls }} $BADGES_ARGS -o mobile
-          cp -r mobile ../$RESULTS_PATH
-          cd ..
+        cd temp_lighthouse_badges_nested
+        if [ ${{ inputs.results-type }} = "both" ]; then
+          { export LIGHTHOUSE_BADGES_PARAMS="${{ inputs.mobile-lighthouse-params }}"; ./src/index.js -u ${{ inputs.urls }} $BADGES_ARGS -o $RESULTS_PATH/mobile; cp -r $RESULTS_PATH/mobile ../$RESULTS_PATH; } & 
+          { export LIGHTHOUSE_BADGES_PARAMS="${{ inputs.desktop-lighthouse-params }}"; ./src/index.js -u ${{ inputs.urls }} $BADGES_ARGS -o $RESULTS_PATH/desktop; cp -r $RESULTS_PATH/desktop ../$RESULTS_PATH; } &
+          wait
+        else
+          if [ ${{ inputs.results-type }} = "mobile" ]; then
+            export LIGHTHOUSE_BADGES_PARAMS="${{ inputs.mobile-lighthouse-params }}"
+          else
+            export LIGHTHOUSE_BADGES_PARAMS="${{ inputs.desktop-lighthouse-params }}"
+          fi
+          ./src/index.js -u ${{ inputs.urls }} $BADGES_ARGS -o $RESULTS_PATH/${{ inputs.results-type }}
+          cp -r $RESULTS_PATH/${{ inputs.results-type }} ../$RESULTS_PATH
         fi
-      shell: bash
-    - name: Create Desktop Results
-      run: |
-        if [ ${{ inputs.results-type }} = "both" ] || [ ${{ inputs.results-type }} = "desktop" ]; then
-          source ~/lighthouse_badger_env.txt
-          cd temp_lighthouse_badges_nested
-          export LIGHTHOUSE_BADGES_PARAMS="${{ inputs.desktop-lighthouse-params }}"
-          ./src/index.js -u ${{ inputs.urls }} $BADGES_ARGS -o desktop
-          cp -r desktop ../$RESULTS_PATH
-          cd ..
-        fi
-      shell: bash
-    - name: Commit Results
-      run: |
-        source ~/lighthouse_badger_env.txt
+        cd ..
         git config --local user.email ${{ inputs.user-email }}
         git config --local user.name ${{ inputs.user-name }}
+        git pull
         git add $RESULTS_PATH
         git commit -am "${{ inputs.commit-message }}"
         git push
