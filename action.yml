@@ -1,42 +1,42 @@
 # Lighthouse-Badger | GitHub Action
 # 
-# Description: Generates, adds & updates manually/automatically Lighthouse badges & reports from one/multiple input URL-group(s) to one/multiple target repo(s)/branch(es)
+# Description: Generates, adds & updates manually/automatically Lighthouse badges & reports from one/multiple input URL-group(s) to one/multiple target repo(s)/branch(es) in parallel
 # Author: Sitdisch
-# Version: v1.1
+# Version: v2.0
 # Source: https://github.com/myactionway/lighthouse-badger-action
 # License: MIT
 # Copyright (c) 2021 Sitdisch
 
 name: 'Lighthouse-Badger'
 author: 'Sitdisch'
-description: "Generates, adds & updates manually/automatically Lighthouse badges & reports from 1,2... URL(s) to 1,2... repo(s)/branch(es)"
+description: "Generates, adds & updates manually/automatically Lighthouse badges & reports from 1,2... URL(s) to 1,2... repo(s) in parallel"
 branding:
   icon: bold
-  color: white
+  color: purple
 
 inputs:
   urls:
     description: 'URL(s) to be checked'
     required: true
-  badges-args:
+  badges_args:
     description: 'Badges arguments: -b, -l, -o, -r, -s'
     required: true
-  results-type:
-    description: 'Results type: mobile, desktop or both'
+  audit_type:
+    description: 'Audit type: mobile, desktop, both or both_p'
     required: true
-  mobile-lighthouse-params:
+  mobile_lighthouse_params:
     description: 'Lighthouse parameters mobile audit'
     required: true
-  desktop-lighthouse-params:
+  desktop_lighthouse_params:
     description: 'Lighthouse parameters desktop audit'
     required: true
-  user-name:
+  user_name:
     description: 'User who should commit'
     required: true
-  user-email:
+  user_email:
     description: 'User e-mail address'
     required: true
-  commit-message:
+  commit_message:
     description: 'Commit message'
     required: true
 
@@ -44,28 +44,37 @@ runs:
   using: "composite"
   steps:
     - run: |
-        RESULTS_PATH=`expr "${{ inputs.badges-args }}" : ".* --\?ou\?t\?p\?u\?t\?-\?p\?a\?t\?h\? \([^ ]*\).*"`;
-        BADGES_ARGS=$(sed -e "s/ \(\(--output-path\)\|\(-o\)\) \S*//g" <<< "${{ inputs.badges-args }}" );
+        RESULTS_PATH=`expr "${{ inputs.badges_args }}" : ".* --\?ou\?t\?p\?u\?t\?-\?p\?a\?t\?h\? \([^ ]*\).*"`;
+        BADGES_ARGS=$(sed -e "s/ \(\(--output-path\)\|\(-o\)\) \S*//g" <<< "${{ inputs.badges_args }}" );
+        AUDIT_TYPE=${{ inputs.audit_type }}
+        declare -A lighthouse_params
+        lighthouse_params[mobile]="${{ inputs.mobile_lighthouse_params }}"
+        lighthouse_params[desktop]="${{ inputs.desktop_lighthouse_params }}"
         mkdir -p $RESULTS_PATH
         cd temp_lighthouse_badges_nested
-        if [ ${{ inputs.results-type }} = "both" ]; then
-          { export LIGHTHOUSE_BADGES_PARAMS="${{ inputs.mobile-lighthouse-params }}"; ./src/index.js -u ${{ inputs.urls }} $BADGES_ARGS -o $RESULTS_PATH/mobile; cp -r $RESULTS_PATH/mobile ../$RESULTS_PATH; } & 
-          { export LIGHTHOUSE_BADGES_PARAMS="${{ inputs.desktop-lighthouse-params }}"; ./src/index.js -u ${{ inputs.urls }} $BADGES_ARGS -o $RESULTS_PATH/desktop; cp -r $RESULTS_PATH/desktop ../$RESULTS_PATH; } &
-          wait
-        else
-          if [ ${{ inputs.results-type }} = "mobile" ]; then
-            export LIGHTHOUSE_BADGES_PARAMS="${{ inputs.mobile-lighthouse-params }}"
+        lighthouse_badger() {
+          export LIGHTHOUSE_BADGES_PARAMS="${lighthouse_params[$1]}"
+          ./src/index.js -u ${{ inputs.urls }} $BADGES_ARGS -o $RESULTS_PATH/$1
+          cp -r $RESULTS_PATH/$1 ../$RESULTS_PATH
+        }
+        if [[ ${AUDIT_TYPE:0:4} = "both" ]]; then
+          if [[ ${AUDIT_TYPE:4} = "_p" ]]; then
+            lighthouse_badger "mobile" &
+            lighthouse_badger "desktop" &
+            wait
           else
-            export LIGHTHOUSE_BADGES_PARAMS="${{ inputs.desktop-lighthouse-params }}"
+            lighthouse_badger "mobile"
+            lighthouse_badger "desktop"
           fi
-          ./src/index.js -u ${{ inputs.urls }} $BADGES_ARGS -o $RESULTS_PATH/${{ inputs.results-type }}
-          cp -r $RESULTS_PATH/${{ inputs.results-type }} ../$RESULTS_PATH
+        else
+          lighthouse_badger "$AUDIT_TYPE"
         fi
         cd ..
-        git config --local user.email ${{ inputs.user-email }}
-        git config --local user.name ${{ inputs.user-name }}
+        git config --local user.email ${{ inputs.user_email }}
+        git config --local user.name ${{ inputs.user_name }}
         git pull
+        git fetch
         git add $RESULTS_PATH
-        git commit -am "${{ inputs.commit-message }}"
+        git commit -am "${{ inputs.commit_message }}"
         git push
       shell: bash

@@ -1,12 +1,16 @@
 <h1 align="center">Lighthouse-Badger | GitHub Action</h1>
 <p align="center"><img src="https://repository-images.githubusercontent.com/359823564/31d7b800-af1f-11eb-8d4b-431075ac940c"/></p>
-<p align="center"><a title="Check it out" target="_blank" href="https://github.com/myactionway/lighthouse-badger-action/blob/master/LICENSE.txt"><img src="https://img.shields.io/github/license/myactionway/lighthouse-badger-action?label=License" /></a>
-<img src="https://img.shields.io/github/repo-size/myactionway/lighthouse-badger-action?label=RepoSize" /></p>
+<p align="center">
+<img src="https://img.shields.io/github/repo-size/myactionway/lighthouse-badger-action?label=RepoSize" />
+<a title="Check it out" target="_blank" href="https://github.com/myactionway/lighthouse-badger-action/blob/master/LICENSE.txt"><img src="https://img.shields.io/github/license/myactionway/lighthouse-badger-action?label=License" /></a>
+<a title="Check it out" target="_blank" href="https://github.com/MyActionWay/lighthouse-badger-action/releases"><img src="https://img.shields.io/github/v/release/myactionway/lighthouse-badger-action?label=LastRelease" /></a>
+</p>
+<small><p align="center">[ <a title="Check it out" target="_blank" href="https://github.com/myactionway/lighthouse-badger-action">Workflow Readme</a> == <a title="Check it out" target="_blank" href="https://github.com/myactionway/lighthouse-badger-action">Action Readme</a> ]</p></small>
 <hr>
 
-The [Lighthouse-Badger](https://github.com/myactionway/lighthouse-badger-action "Get it") GitHub action makes it easy to manually/automatically generate, add and update Lighthouse badges and reports from one/multiple input URL-group(s) to one/multiple target repo(s)/branch(es).
+The [Lighthouse-Badger](https://github.com/myactionway/lighthouse-badger-action "Get it") GitHub action makes it easy to manually/automatically generate, add and update Lighthouse badges and reports from one/multiple input URL-group(s) to one/multiple target repo(s)/branch(es) in parallel.
 
-If you've it [set up](#-setups "Go there"), you only need to add the result links to your use case once. Then the [Lighthouse-Badger](https://github.com/myactionway/lighthouse-badger-action "Get it") will automatically keep the badges up to date for you. So sit back and let the Badger do the job :wink:.
+Once you have it [set up](#-setups "Go there"), you only need to add the links to your results once in your use case. The [Lighthouse-Badger](https://github.com/myactionway/lighthouse-badger-action "Get it") will then automatically keep the badges up to date for you. So sit back and let the Badger do the job :wink:.
 
 ## | Credits
 
@@ -32,18 +36,18 @@ Last but not least, everything is based on the extraordinary work of the contrib
 
 ### Reports
 
-The awesome [htmlpreview.github.com](https://github.com/htmlpreview/htmlpreview.github.com) repository makes it easy to show up your Lighthouse reports instantly rendered. Just put this `https://htmlpreview.github.io/?` before the URL where you placed your Lighthouse report e.&nbsp;g. `https://htmlpreview.github.io/?https://github.com/sitdisch/cloud/blob/master/lighthouse-results/dark-particle/desktop/mythemeway_github_io_dark_particle_.html`<br>
+The awesome [htmlpreview.github.com](https://github.com/htmlpreview/htmlpreview.github.com) repository makes it easy to show up your Lighthouse reports instantly rendered. Just put this `https://htmlpreview.github.io/?` before the URL where you placed your Lighthouse report e.&nbsp;g. `https://htmlpreview.github.io/?https://github.com/sitdisch/cloud/blob/master/lighthouse_results/dark_particle/desktop/mythemeway_github_io_dark_particle_.html`<br>
 
-Examples: <a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/sitdisch/cloud/master/lighthouse-results/dark-particle/desktop/mythemeway_github_io_dark_particle_.html" title="Check it out" target="_blank">Main Page </a> | <a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/sitdisch/cloud/master/lighthouse-results/dark-particle/desktop/mythemeway_github_io_dark_particle_projects_2020_10_31_project_1_html.html" title="Check it out" target="_blank">Project Page</a>
+Examples: <a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/sitdisch/cloud/master/lighthouse_results/dark_particle/desktop/mythemeway_github_io_dark_particle_.html" title="Check it out" target="_blank">Main Page </a> | <a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/sitdisch/cloud/master/lighthouse_results/dark_particle/desktop/mythemeway_github_io_dark_particle_projects_2020_10_31_project_1_html.html" title="Check it out" target="_blank">Project Page</a>
 
-<img src="https://raw.githubusercontent.com/sitdisch/cloud/master/images/lighthousebadger_report.png" />
+<a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/sitdisch/cloud/master/lighthouse_results/dark_particle/desktop/mythemeway_github_io_dark_particle_.html" title="Check it out" target="_blank"><img src="https://raw.githubusercontent.com/sitdisch/cloud/master/images/lighthousebadger_report.png" /></a>
 
 ## | Setups
 
-First, choose one of these three workflow files:
+First, choose a workflow file:
 
 ### [lighthouse-badger-default.yml](https://github.com/MyActionWay/lighthouse-badger-workflows/blob/master/.github/workflows/lighthouse-badger-default.yml "Get it")
-Generates, adds & updates manually/automatically Lighthouse badges & reports from <b>one/multiple input URL(s)</b> to a selected target repository & branch.
+Generates, adds & updates manually/automatically Lighthouse badges & reports from one/multiple input <b>URL(s) to a selected target repository & branch</b>.
 
 <details><summary><b>Set it up (click to toggle)</b></summary>
 
@@ -51,49 +55,38 @@ Generates, adds & updates manually/automatically Lighthouse badges & reports fro
 	* the path has to be `.github/workflows/lighthouse-badger-default.yml`
 	* it doesn't have to be the repository where you want to add the Lighthouse results; e.&nbsp;g., you can simply [fork](https://github.com/myactionway/lighthouse-badger-workflows/fork "fork it") the `myactionway/lighthouse-badger-workflows` repository
 		* CONSIDER: with a forked repository, you need to confirm that you want to use a workflow before you can actually use it (repo menu > actions tab > push the button)
-2. create a new encrypted repository secret [[procedure]](https://docs.github.com/en/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-a-repository "Learn how")
+2. create a new encrypted repository secret [[procedure](https://docs.github.com/en/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-a-repository "Learn how")]
 	* add the secret to the same repository where you added this workflow file
 	* give the secret a name e.&nbsp;g. `LIGHTHOUSE_BADGER_TOKEN`
-	* the value of the secret must be the value of the personal access token for the repository where you want to add the Lighthouse results.
+	* the value of the secret must be the value of the personal access token for the target repository where you want to add the Lighthouse results.
 		* [procedure for creating a personal access token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token "Learn how")
 		* select only the minimum scopes and permissions required e.&nbsp;g. repo
 3. adapt your [lighthouse-badger-default.yml](https://github.com/MyActionWay/lighthouse-badger-workflows/blob/master/.github/workflows/lighthouse-badger-default.yml "Get it") file
 	* for manual triggers
-		* all you have to do is enter your secret name e.&nbsp;g. `LIGHTHOUSE_BADGER_TOKEN`
-			```yml
-			env:
-			#	Token for all triggers
-				TOKEN: ${{ secrets.LIGHTHOUSE_BADGER_TOKEN }}
-			```
-			* CONSIDER: never enter the actual value of the personal access token
-		* [procedure for manually running a workflow on GitHub](https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow#running-a-workflow-on-github "Learn how")
-			<img src="https://raw.githubusercontent.com/sitdisch/cloud/master/images/lighthousebadger_manual_inputs.png" />
-			* CONSIDER: currently, you can't change the `TOKEN` in the UI
-		* [procedure for manually running a workflow using the GitHub CLI](https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow#running-a-workflow-using-github-cli)
-		* [procedure for manually running a workflow using the REST API](https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow#running-a-workflow-using-the-rest-api)
+		* you don't have to adjust anything in the workflow file; just use it
+			* [procedure for manually running a workflow on GitHub](https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow#running-a-workflow-on-github "Learn how")
+				<img src="https://raw.githubusercontent.com/sitdisch/cloud/master/images/lighthousebadger_manual_inputs.png" />
+			* [procedure for manually running a workflow using the GitHub CLI](https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow#running-a-workflow-using-github-cli)
+			* [procedure for manually running a workflow using the REST API](https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow#running-a-workflow-using-the-rest-api)
 	* for all other triggers
 		* adapt this section
 			```yml
 			##############################################################
-			# DEFINE YOUR TOKEN, INPUTS AND TRIGGERS IN THE FOLLOWING
+			# DEFINE YOUR INPUTS AND TRIGGERS IN THE FOLLOWING
 			##############################################################
 
-			# TOKEN and INPUTS as environmental variables
+			# INPUTS as environmental variables (env)
 			env:
-			#	Token for all triggers
-				TOKEN: # e.g. ${{ secrets.LIGHTHOUSE_BADGER_TOKEN }}
-			# 
-			#	Inputs for not manually triggered workflows
 				URLS: # URL(s) to be checked e.g. 'https://github.com/sitdisch https://github.com/mythemeway'
-				REPOSITORY: # target repository e.g. 'dummy/mytargetrepo'
-				BRANCH: # target branch e.g. 'master'
-				BADGES-ARGS: # badge-style '-b {flat,...}', preceding-label '-l "Lighthouse "', output-path '-o lighthouse_results/dummy', save-report '-r', single-badge '-s'
-				RESULTS-TYPE: # 'mobile', 'desktop' or 'both'
-				MOBILE-LIGHTHOUSE-PARAMS: # Lighthouse parameters mobile audit
-				DESKTOP-LIGHTHOUSE-PARAMS: # Lighthouse parameters desktop audit
-				USER-NAME: # user who should commit e.g. 'dummy'
-				USER-EMAIL: # e.g. 'dummy@gmail.com'
-				COMMIT-MESSAGE: # e.g. 'Lighthouse results added'
+				TOKEN_NAME: # target token name e.g. 'LIGHTHOUSE_BADGER_TOKEN'
+				REPO_BRANCH: # target repository & branch e.g. 'dummy/mytargetrepo master'
+				BADGES_ARGS: # badge-style '-b {flat,...}', preceding-label '-l "Lighthouse "', output-path '-o lighthouse_results/dummy', save-report '-r', single-badge '-s'
+				AUDIT_TYPE: # 'mobile', 'desktop', 'both' or 'both_p' 
+				MOBILE_LIGHTHOUSE_PARAMS: # Lighthouse parameters mobile audit
+				DESKTOP_LIGHTHOUSE_PARAMS: # Lighthouse parameters desktop audit
+				USER_NAME: # user who should commit e.g. 'dummy'
+				USER_EMAIL: # e.g. 'dummy@gmail.com'
+				COMMIT_MESSAGE: # e.g. 'Lighthouse results added'
 
 			# TRIGGERS
 			on:
@@ -102,28 +95,32 @@ Generates, adds & updates manually/automatically Lighthouse badges & reports fro
 			#		- cron: '55 23 * * 0'
 			```
 		* CONSIDER:
-			* token: never enter the actual value of the personal access token
-			* inputs:
-				* you only have to insert `URLS`; if any other input is blank, one of these default values will be used instead
+			* INPUTS:
+				* you only have to define `TOKEN_NAME` and `URLS`; if any other input is blank, one of these default values will be used instead
 					```yml
-					DEFAULT-REPOSITORY: ${{ github.repository }} # repo with this file
-					DEFAULT-BRANCH: 'master'
-					DEFAULT-BADGES-ARGS: '-b pagespeed -o lighthouse_results -r'
-					DEFAULT-RESULTS-TYPE: 'both'
-					DEFAULT-MOBILE-LIGHTHOUSE-PARAMS: '--throttling.cpuSlowdownMultiplier=2'
-					DEFAULT-DESKTOP-LIGHTHOUSE-PARAMS: '--preset=desktop --throttling.cpuSlowdownMultiplier=1'
-					DEFAULT-USER-NAME: 'github-actions[bot]'
-					DEFAULT-USER-EMAIL: '41898282+github-actions[bot]@users.noreply.github.com'
-					DEFAULT-COMMIT-MESSAGE: 'Lighthouse-Badger[bot]: Results Added'
+					DEFAULT_REPO_BRANCH: '${{ github.repository }} master' # repo with this file and master branch
+					DEFAULT_BADGES_ARGS: '-b pagespeed -o lighthouse_results -r'
+					DEFAULT_AUDIT_TYPE: 'both'
+					DEFAULT_MOBILE_LIGHTHOUSE_PARAMS: '--throttling.cpuSlowdownMultiplier=2'
+					DEFAULT_DESKTOP_LIGHTHOUSE_PARAMS: '--preset=desktop --throttling.cpuSlowdownMultiplier=1'
+					DEFAULT_USER_NAME: 'github-actions[bot]'
+					DEFAULT_USER_EMAIL: '41898282+github-actions[bot]@users.noreply.github.com'
+					DEFAULT_COMMIT_MESSAGE: 'Lighthouse-Badger[bot]: Results Added'
 					```
-				* badges-args: 
+				* `TOKEN_NAME`: never enter the actual value of the personal access token
+				* `BADGES_ARGS`: 
 					* more information about the optional arguments can be found [here](https://github.com/sitdisch/lighthouse-badges#help "Go there")
 					* in contrast to the Lighthouse-Badges repository
 						* do not enter any URL(s) here
 						* mobile or/and desktop is/are always added to your output-path
-			* triggers:
-				* page_build: Lighthouse results are generated every time after the GitHub page is built
-				* schedule:
+				* `MOBILE/DESKTOP_LIGHTHOUSE_PARAMS`:
+					* more information about the optional arguments can be found [here](https://github.com/GoogleChrome/lighthouse#cli-options)
+				* `AUDIT_TYPE`:
+					* `'both_p'`: desktop and mobile audits are carried out in parallel
+						* <b>it's not recommended</b> as it can skew the performance results [<a title="Check it out" target="_blank" href="https://github.com/GoogleChrome/lighthouse/issues/7104#issuecomment-458368476">source</a>] and it can also be slower than `'both'`
+			* TRIGGERS:
+				* `page_build`: Lighthouse results are generated every time after the GitHub page is built
+				* `schedule`:
 					* e.&nbsp;g. `cron: '55 23 * * 0'` executes the [Lighthouse-Badger](https://github.com/myactionway/lighthouse-badger-action "Get it") every Sunday at 23:55
 					* you can check your inputs [here](https://crontab.guru/ "Go there")
 
@@ -131,278 +128,118 @@ That's it. Happy audits.
 
 </details><p>
 
-### [lighthouse-badger-n-groups.yml](https://github.com/MyActionWay/lighthouse-badger-workflows/blob/master/.github/workflows/lighthouse-badger-n-groups.yml "Get it")
-Generates, adds & updates manually/automatically Lighthouse badges & reports for <b>different input URL-groups</b> to a selected target repository & branch.
+### [lighthouse-badger-advanced.yml](https://github.com/MyActionWay/lighthouse-badger-workflows/blob/master/.github/workflows/lighthouse-badger-advanced.yml "Get it")
+Generates, adds & updates manually/automatically Lighthouse badges & reports from one/multiple input <b>URL-group(s) to one/multiple target repo(s)/branch(es) in parallel</b>
 
 <details><summary><b>Set it up (click to toggle)</b></summary>
 
-1. add the [lighthouse-badger-n-groups.yml](https://github.com/MyActionWay/lighthouse-badger-workflows/blob/master/.github/workflows/lighthouse-badger-n-groups.yml "Get it") workflow file to a repository
-	* the path has to be `.github/workflows/lighthouse-badger-n-groups.yml`
-	* it doesn't have to be the repository where you want to add the Lighthouse results; e.&nbsp;g., you can simply [fork](https://github.com/myactionway/lighthouse-badger-workflows/fork "fork it") the `myactionway/lighthouse-badger-workflows` repository
+1. add the [lighthouse-badger-advanced.yml](https://github.com/MyActionWay/lighthouse-badger-workflows/blob/master/.github/workflows/lighthouse-badger-advanced.yml "Get it") workflow file to a repository
+	* the path has to be `.github/workflows/lighthouse-badger-advanced.yml`
+	* it doesn't have to be a repository where you want to add Lighthouse results; e.&nbsp;g., you can simply [fork](https://github.com/myactionway/lighthouse-badger-workflows/fork "fork it") the `myactionway/lighthouse-badger-workflows` repository
 		* CONSIDER: with a forked repository, you need to confirm that you want to use a workflow before you can actually use it (repo menu > actions tab > push the button)
-2. create a new encrypted repository secret [[procedure]](https://docs.github.com/en/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-a-repository "Learn how")
-	* add the secret to the same repository where you added this workflow file
-	* give the secret a name e.&nbsp;g. `LIGHTHOUSE_BADGER_TOKEN`
-	* the value of the secret must be the value of the personal access token for the repository where you want to add the Lighthouse results.
+2. create new encrypted repository secrets [[procedure](https://docs.github.com/en/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-a-repository "Learn how")]
+	* add the secrets to the same repository where you added this workflow file
+	* give the secrets names e.&nbsp;g. `LIGHTHOUSE_BADGER_TOKEN_1` and `LIGHTHOUSE_BADGER_TOKEN_2`
+	* the values of the secrets must be the values of the personal access tokens for the target repositories where you want to add the Lighthouse results.
 		* [procedure for creating a personal access token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token "Learn how")
 		* select only the minimum scopes and permissions required e.&nbsp;g. repo
-3. adapt your [lighthouse-badger-n-groups.yml](https://github.com/MyActionWay/lighthouse-badger-workflows/blob/master/.github/workflows/lighthouse-badger-n-groups.yml "Get it") file
+3. adapt your [lighthouse-badger-advanced.yml](https://github.com/MyActionWay/lighthouse-badger-workflows/blob/master/.github/workflows/lighthouse-badger-advanced.yml "Get it") file
 	* define your defaults
 		```yml
-		########################################################################
-		# DEFINE YOUR DEFAULTS (TOKEN, INPUTS & TRIGGERS) IN THE FOLLOWING
-		########################################################################
+		##############################################################
+		# DEFINE YOUR DEFAULTS (INPUTS & TRIGGERS) IN THE FOLLOWING
+		##############################################################
 
-		# TOKEN and INPUTS as environmental variables (env)
+		# INPUTS as environmental variables (env)
 		env:
-			TOKEN: # e.g. ${{ secrets.LIGHTHOUSE_BADGER_TOKEN }}
-			REPOSITORY: # target repository e.g. 'dummy/mytargetrepo'
-			BRANCH: # target branch e.g. 'master'
-			USER-NAME: # user who should commit e.g. 'dummy'
-			USER-EMAIL: # e.g. 'dummy@gmail.com'
-			COMMIT-MESSAGE: # e.g. 'Lighthouse results added'
-			RESULTS-TYPE: # 'mobile', 'desktop' or 'both'
-			MOBILE-LIGHTHOUSE-PARAMS: # Lighthouse parameters mobile audit
-			DESKTOP-LIGHTHOUSE-PARAMS: # Lighthouse parameters desktop audit
+			TOKEN_NAME: # target token name e.g. 'LIGHTHOUSE_BADGER_TOKEN_1'
+			REPO_BRANCH: # target repository & branch e.g. 'dummy/mytargetrepo_1 master'
+			AUDIT_TYPE: # 'mobile', 'desktop', 'both' or 'both_p' 
+			MOBILE_LIGHTHOUSE_PARAMS: # Lighthouse parameters mobile audit
+			DESKTOP_LIGHTHOUSE_PARAMS: # Lighthouse parameters desktop audit
+			USER_NAME: # user who should commit e.g. 'dummy'
+			USER_EMAIL: # e.g. 'dummy@gmail.com'
+			COMMIT_MESSAGE: # e.g. 'Lighthouse results added'
 
 		# TRIGGERS
 		on:
 		#	page_build:
 		#	schedule:
-		#		- cron: '55 23 * * 0' # e.g. every Sunday at 23:55
-		#	workflow_dispatch:
+		#		- cron: '55 23 * * 0'
+			workflow_dispatch:
 		```
 		* CONSIDER:
-			* token: never enter the actual value of the personal access token
-			* inputs:
-				* all inputs have predefined values; you can, but you don't have to overwrite them
+			* INPUTS:
+				* `TOKEN_NAME`: never enter the actual value of the personal access token
+				* all inputs except `TOKEN_NAME` have predefined values; you can, but you don't have to overwrite them
 					```yml
 					# Predefined values
-					REPOSITORY: ${{ github.repository }} # repo with this file
-					BRANCH: 'master'
-					USER-NAME: 'github-actions[bot]'
-					USER-EMAIL: '41898282+github-actions[bot]@users.noreply.github.com'
-					COMMIT-MESSAGE: 'Lighthouse-Badger[bot]: Results Added'
-					RESULTS-TYPE: 'both'
-					MOBILE-LIGHTHOUSE-PARAMS: '--throttling.cpuSlowdownMultiplier=2'
-					DESKTOP-LIGHTHOUSE-PARAMS: '--preset=desktop --throttling.cpuSlowdownMultiplier=1'
+					REPO_BRANCH: '${{ github.repository }} master' # repo with this file and master branch
+					AUDIT_TYPE: 'both'
+					MOBILE_LIGHTHOUSE_PARAMS: '--throttling.cpuSlowdownMultiplier=2'
+					DESKTOP_LIGHTHOUSE_PARAMS: '--preset=desktop --throttling.cpuSlowdownMultiplier=1'
+					USER_NAME: 'github-actions[bot]'
+					USER_EMAIL: '41898282+github-actions[bot]@users.noreply.github.com'
+					COMMIT_MESSAGE: 'Lighthouse-Badger[bot]: Results Added'
 					```
-			* triggers:
-				* page_build: Lighthouse results are generated every time after the GitHub page is built
-				* schedule:
+				* `MOBILE/DESKTOP_LIGHTHOUSE_PARAMS`:
+					* more information about the optional arguments can be found [here](https://github.com/GoogleChrome/lighthouse#cli-options)
+				* `AUDIT_TYPE`:
+					* `'both_p'`: desktop and mobile audits are carried out in parallel
+						* <b>it's not recommended</b> as it can skew the performance results [<a title="Check it out" target="_blank" href="https://github.com/GoogleChrome/lighthouse/issues/7104#issuecomment-458368476">source</a>] and it can also be slower than `'both'`
+			* TRIGGERS:
+				* `page_build`: Lighthouse results are generated every time after the GitHub page is built
+				* `schedule`:
 					* e.&nbsp;g. `cron: '55 23 * * 0'` executes the [Lighthouse-Badger](https://github.com/myactionway/lighthouse-badger-action "Get it") every Sunday at 23:55
 					* you can check your inputs [here](https://crontab.guru/ "Go there")
-				* workflow_dispatch:
-					* no predefined inputs; the environmental variables defined in this workflow file are used instead when this trigger is triggered
+				* `workflow_dispatch`:
+					* no predefined inputs; the `env` defined in this workflow file are used instead when this trigger is triggered
 					* [procedure for manually running a workflow on GitHub](https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow#running-a-workflow-on-github "Learn how")
 					* [procedure for manually running a workflow using the GitHub CLI](https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow#running-a-workflow-using-github-cli)
 					* [procedure for manually running a workflow using the REST API](https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow#running-a-workflow-using-the-rest-api)<p>
 	* define your settings for the different input URL-Groups
 		```yml
-		#
+		##############################################################
 		# FIRST URL-GROUP | DEFINE YOUR ENV IN THE FOLLOWING
-		#
-		{
-		 URLS='https://github.com/sitdisch https://github.com/mythemeway';
-		 BADGES_ARGS='-b pagespeed -o lighthouse_results/first_group -r';
-		 RESULTS_TYPE='${{ env.RESULTS-TYPE }}';
-		 MOBILE_LIGHTHOUSE_PARAMS='${{ env.MOBILE-LIGHTHOUSE-PARAMS }}';
-		 DESKTOP_LIGHTHOUSE_PARAMS='${{ env.DESKTOP-LIGHTHOUSE-PARAMS }}';
-		 # THAT'S IT; JUMP TO THE NEXT URL-GROUP
-		 lighthouse_badger_action
-		} &
-		#
+		##############################################################
+		-	NAME: 'URL-GROUP 1'
+			URLS: 'https://github.com/sitdisch https://github.com/mythemeway'
+			BADGES_ARGS: '-b pagespeed -o lighthouse_results/first_group -r'
+		#	TOKEN_NAME:
+		#	REPO_BRANCH:
+		#	AUDIT_TYPE:
+		#	MOBILE_LIGHTHOUSE_PARAMS:
+		#	DESKTOP_LIGHTHOUSE-PARAMS:
+		#	USER_NAME:
+		#	USER_EMAIL:
+		#	COMMIT_MESSAGE: # e.g. 'Lighthouse-Badger[bot]: Results Added | First URL-Group'
+		##############################################################
 		# SECOND URL-GROUP | DEFINE YOUR ENV IN THE FOLLOWING
-		#
-		{
-		 URLS='https://mythemeway.github.io/Dark-Particle/ https://mythemeway.github.io/Dark-Particle/projects/2020/10/31/project-1.html';
-		 BADGES_ARGS='-b flat -o lighthouse_results/second_group -r';
-		 RESULTS_TYPE='${{ env.RESULTS-TYPE }}';
-		 MOBILE_LIGHTHOUSE_PARAMS='${{ env.MOBILE-LIGHTHOUSE-PARAMS }}';
-		 DESKTOP_LIGHTHOUSE_PARAMS='${{ env.DESKTOP-LIGHTHOUSE-PARAMS }}';
-		 # THAT'S IT; JUMP TO THE NEXT URL-GROUP
-		 lighthouse_badger_action
-		} &
-		#
-		# THIRD ULR-GROUP | ...
-		#
+		##############################################################
+		-	NAME: 'URL-GROUP 2'
+			URLS: 'https://mythemeway.github.io/Dark-Particle/ https://mythemeway.github.io/Dark-Particle/projects/2020/10/31/project-1.html'
+			BADGES_ARGS: '-b flat -o lighthouse_results/second_group -r'
+		#	TOKEN_NAME: # e.g. 'LIGHTHOUSE_BADGER_TOKEN_2'
+		#	REPO_BRANCH: # e.g. 'dummy/mytargetrepo_2 master'
+		#	AUDIT_TYPE:
+		#	MOBILE_LIGHTHOUSE_PARAMS:
+		#	DESKTOP_LIGHTHOUSE_PARAMS:
+		#	USER_NAME:
+		#	USER_EMAIL:
+		#	COMMIT_MESSAGE: # e.g. 'Lighthouse-Badger[bot]: Results Added | Second URL-Group'
+		##############################################################
+		# THIRD URL-GROUP | FEEL FREE TO ADD MORE URL-GROUPS...
 		```
 		* CONSIDER: 
-			* you just have to change `URLS` and `BADGES_ARGS` for each group
-				* `BADGES_ARGS`: 
-					* set different output-paths for different groups
-					* more information about the optional arguments can be found [here](https://github.com/sitdisch/lighthouse-badges#help "Go there")
-					* in contrast to the Lighthouse-Badges repository
-						* do not enter any URL(s) here
-						* mobile or/and desktop is/are always added to your output-path
-			* if you do not change any of the other inputs, your predefined defaults will be used instead
-			* you can't change TOKEN, REPOSITORY, BRANCH, USER-NAME, USER-EMAIL and COMMIT-MESSAGE for the different URL-groups; this is possible with the [lighthouse-badger-n-targets.yml](#lighthouse-badger-n-targetsyml "Go there") workflow file
-
-That's it. Happy audits.
-
-</details><p>
-
-### [lighthouse-badger-n-targets.yml](https://github.com/MyActionWay/lighthouse-badger-workflows/blob/master/.github/workflows/lighthouse-badger-n-targets.yml "Get it")
-Generates, adds & updates manually/automatically Lighthouse badges & reports for <b>different input URL-groups to different target repositories & branches</b>
-
-<details><summary><b>Set it up (click to toggle)</b></summary>
-
-1. add the [lighthouse-badger-n-targets.yml](https://github.com/MyActionWay/lighthouse-badger-workflows/blob/master/.github/workflows/lighthouse-badger-n-targets.yml "Get it") workflow file to a repository
-	* the path has to be `.github/workflows/lighthouse-badger-n-targets.yml`
-	* it doesn't have to be a repository where you want to add Lighthouse results; e.&nbsp;g., you can simply [fork](https://github.com/myactionway/lighthouse-badger-workflows/fork "fork it") the `myactionway/lighthouse-badger-workflows` repository
-		* CONSIDER: with a forked repository, you need to confirm that you want to use a workflow before you can actually use it (repo menu > actions tab > push the button)
-2. create new encrypted repository secrets [[procedure]](https://docs.github.com/en/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-a-repository "Learn how")
-	* add the secrets to the same repository where you added this workflow file
-	* give the secrets names e.&nbsp;g. `LIGHTHOUSE_BADGER_TOKEN1` and `LIGHTHOUSE_BADGER_TOKEN2`
-	* the values of the secrets must be the values of the personal access tokens for the repositories where you want to add the Lighthouse results.
-		* [procedure for creating a personal access token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token "Learn how")
-		* select only the minimum scopes and permissions required e.&nbsp;g. repo
-3. adapt your [lighthouse-badger-n-targets.yml](https://github.com/MyActionWay/lighthouse-badger-workflows/blob/master/.github/workflows/lighthouse-badger-n-targets.yml "Get it") file
-	* define your defaults
-		```yml
-		########################################################################
-		# DEFINE YOUR DEFAULTS (TOKEN, INPUTS & TRIGGERS) IN THE FOLLOWING
-		########################################################################
-
-		# TOKEN and INPUTS as environmental variables (env)
-		env:
-			TOKEN: # e.g. ${{ secrets.LIGHTHOUSE_BADGER_TOKEN1 }}
-			REPOSITORY: # target repository e.g. 'dummy/mytargetrepo'
-			BRANCH: # target branch e.g. 'master'
-			USER-NAME: # user who should commit e.g. 'dummy'
-			USER-EMAIL: # e.g. 'dummy@gmail.com'
-			COMMIT-MESSAGE: # e.g. 'Lighthouse results added'
-			RESULTS-TYPE: # 'mobile', 'desktop' or 'both'
-			MOBILE-LIGHTHOUSE-PARAMS: # Lighthouse parameters mobile audit
-			DESKTOP-LIGHTHOUSE-PARAMS: # Lighthouse parameters desktop audit
-
-		# TRIGGERS
-		on:
-		#	page_build:
-		#	schedule:
-		#		- cron: '55 23 * * 0' # e.g. every Sunday at 23:55
-		#	workflow_dispatch:
-		```
-		* CONSIDER:
-			* token: never enter the actual value of the personal access token
-			* inputs:
-				* all inputs have predefined values; you can, but you don't have to overwrite them
-					```yml
-					# Predefined values
-					REPOSITORY: ${{ github.repository }} # repo with this file
-					BRANCH: 'master'
-					USER-NAME: 'github-actions[bot]'
-					USER-EMAIL: '41898282+github-actions[bot]@users.noreply.github.com'
-					COMMIT-MESSAGE: 'Lighthouse-Badger[bot]: Results Added'
-					RESULTS-TYPE: 'both'
-					MOBILE-LIGHTHOUSE-PARAMS: '--throttling.cpuSlowdownMultiplier=2'
-					DESKTOP-LIGHTHOUSE-PARAMS: '--preset=desktop --throttling.cpuSlowdownMultiplier=1'
-					```
-			* triggers:
-				* page_build: Lighthouse results are generated every time after the GitHub page is built
-				* schedule:
-					* e.&nbsp;g. `cron: '55 23 * * 0'` executes the [Lighthouse-Badger](https://github.com/myactionway/lighthouse-badger-action "Get it") every Sunday at 23:55
-					* you can check your inputs [here](https://crontab.guru/ "Go there")
-				* workflow_dispatch:
-					* no predefined inputs; the environmental variables defined in this workflow file are used instead when this trigger is triggered
-					* [procedure for manually running a workflow on GitHub](https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow#running-a-workflow-on-github "Learn how")
-					* [procedure for manually running a workflow using the GitHub CLI](https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow#running-a-workflow-using-github-cli)
-					* [procedure for manually running a workflow using the REST API](https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow#running-a-workflow-using-the-rest-api)<p>
-	* define your settings for the first target
-		```yml
-		###################################################################
-		# FIRST TARGET | DEFINE YOUR ENV IN THE FOLLOWING
-		###################################################################
-		lighthouse-badger-1-target:
-			runs-on: ubuntu-20.04
-			env:
-		#		TOKEN:
-				REPOSITORY: 'dummy/first_repo'
-		#		BRANCH:
-		#		RESULTS-TYPE:
-		#		MOBILE-LIGHTHOUSE-PARAMS:
-		#		DESKTOP-LIGHTHOUSE-PARAMS:
-		#		USER-NAME:
-		#		USER-EMAIL:
-				COMMIT-MESSAGE: 'Lighthouse-Badger[bot]: Results Added | First Target'
-		```
-		* CONSIDER: your defaults will be used unless you redefine the env<p>
-	* define your settings for the different input URL-Groups of the first target
-		```yml
-		#
-		# FIRST URL-GROUP | FIRST TARGET | DEFINE YOUR ENV BELOW
-		#
-		{
-		 URLS='https://github.com/sitdisch https://github.com/mythemeway';
-		 BADGES_ARGS='-b pagespeed -o lighthouse_results/first_group -r';
-		 RESULTS_TYPE='${{ env.RESULTS-TYPE }}';
-		 MOBILE_LIGHTHOUSE_PARAMS='${{ env.MOBILE-LIGHTHOUSE-PARAMS }}';
-		 DESKTOP_LIGHTHOUSE_PARAMS='${{ env.DESKTOP-LIGHTHOUSE-PARAMS }}';
-		 # THAT'S IT; JUMP TO THE NEXT URL-GROUP
-		 lighthouse_badger_action
-		} &
-		#
-		# SECOND URL-GROUP | FIRST TARGET | DEFINE YOUR ENV BELOW
-		#
-		{
-		 URLS='https://mythemeway.github.io/Dark-Particle/ https://mythemeway.github.io/Dark-Particle/projects/2020/10/31/project-1.html';
-		 BADGES_ARGS='-b flat -o lighthouse_results/second_group -r';
-		 RESULTS_TYPE='${{ env.RESULTS-TYPE }}';
-		 MOBILE_LIGHTHOUSE_PARAMS='${{ env.MOBILE-LIGHTHOUSE-PARAMS }}';
-		 DESKTOP_LIGHTHOUSE_PARAMS='${{ env.DESKTOP-LIGHTHOUSE-PARAMS }}';
-		 # THAT'S IT; JUMP TO THE NEXT URL-GROUP
-		 lighthouse_badger_action
-		} &
-		#
-		# THIRD ULR-GROUP | ...
-		#
-		```
-		* CONSIDER: 
-			* you just have to change `URLS` and `BADGES_ARGS` for each group
-				* `BADGES_ARGS`: 
-					* set different output-paths for different groups
-					* more information about the optional arguments can be found [here](https://github.com/sitdisch/lighthouse-badges#help "Go there")
-					* in contrast to the Lighthouse-Badges repository
-						* do not enter any URL(s) here
-						* mobile or/and desktop is/are always added to your output-path
-			* if you do not change any of the other inputs, your predefined defaults will be used instead
-			* you can't change TOKEN, REPOSITORY, BRANCH, USER-NAME, USER-EMAIL and COMMIT-MESSAGE for the different URL-groups;
-	* define your settings for the second target
-		```yml
-		###################################################################
-		# SECOND TARGET | DEFINE YOUR ENV IN THE FOLLOWING
-		###################################################################
-		lighthouse-badger-2-target:
-			runs-on: ubuntu-20.04
-			env:
-				TOKEN: ${{ secrets.LIGHTHOUSE_BADGER_TOKEN2 }}
-				REPOSITORY: 'dummy/second_repo'
-		#		BRANCH:
-		#		RESULTS-TYPE:
-		#		MOBILE-LIGHTHOUSE-PARAMS:
-		#		DESKTOP-LIGHTHOUSE-PARAMS:
-		#		USER-NAME:
-		#		USER-EMAIL:
-				COMMIT-MESSAGE: 'Lighthouse-Badger[bot]: Results Added | Second Target'
-	* define your settings for the different input URL-Groups of the second target
-		```yml
-		#
-		# FIRST URL-GROUP | SECOND TARGET | DEFINE YOUR ENV BELOW
-		#
-		{
-		 URLS='https://github.com/myactionway';
-		 BADGES_ARGS='-b pagespeed -o lighthouse_results/first_group -r';
-		 RESULTS_TYPE='${{ env.RESULTS-TYPE }}';
-		 MOBILE_LIGHTHOUSE_PARAMS='${{ env.MOBILE-LIGHTHOUSE-PARAMS }}';
-		 DESKTOP_LIGHTHOUSE_PARAMS='${{ env.DESKTOP-LIGHTHOUSE-PARAMS }}';
-		 # THAT'S IT; JUMP TO THE NEXT URL-GROUP
-		 lighthouse_badger_action
-		} &
-		#
-		# SECOND URL-GROUP | ...
-		#
-		```
-	* feel free to add more targets like above
+			* you just have to define `NAME`, `URLS` and `BADGES_ARGS` for each group; if you do not define any of the other inputs, your predefined defaults will be used instead
+			* `BADGES_ARGS`: 
+				* set different output-paths for different groups
+				* more information about the optional arguments can be found [here](https://github.com/sitdisch/lighthouse-badges#help "Go there")
+				* in contrast to the Lighthouse-Badges repository
+					* do not enter any URL(s) here
+					* mobile or/and desktop is/are always added to your output-path
+			* `TOKEN_NAME`: never enter the actual value of the personal access token
+			* only a maximum of <b>256 URL-Groups</b> per workflow run is possible [[GitHub restriction](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idstrategymatrix "Go there")]
 
 That's it. Happy audits.
 
