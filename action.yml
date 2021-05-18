@@ -2,7 +2,7 @@
 # 
 # Description: Generates, adds & updates manually/automatically Lighthouse badges & reports from one/multiple input URL-group(s) to one/multiple target repo(s)/branch(es) in parallel
 # Author: Sitdisch
-# Version: v2.1
+# Version: v2.2
 # Source: https://github.com/myactionway/lighthouse-badger-action
 # License: MIT
 # Copyright (c) 2021 Sitdisch
@@ -75,8 +75,8 @@ runs:
         cd ..
         git config --local user.email ${{ inputs.user_email }}
         git config --local user.name ${{ inputs.user_name }}
-        git pull
-        git fetch
+        git config --local pull.rebase false
+        git pull origin ${{ env.BRANCH }}
         git add $RESULTS_PATH
         git commit -am "${{ inputs.commit_message }}"
         i=0
@@ -89,8 +89,7 @@ runs:
           if [ $i = ${{ inputs.max_push_attempts }} ]; then
             break
           fi
-          git pull
-          git fetch
+          git pull origin ${{ env.BRANCH }}
         }
         done
       shell: bash
