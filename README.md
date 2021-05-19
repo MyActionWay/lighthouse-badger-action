@@ -46,6 +46,76 @@ Examples: <a href="https://htmlpreview.github.io/?https://raw.githubusercontent.
 
 First, choose a workflow file:
 
+### [lighthouse-badger-easy.yml](https://github.com/MyActionWay/lighthouse-badger-workflows/blob/master/.github/workflows/lighthouse-badger-easy.yml "Get it")
+Generates, adds & updates manually/automatically Lighthouse badges & reports from one/multiple input <b>URL(s) to the current repository & master branch with minimal settings</b>.
+
+<details><summary><b>Set it up (click to toggle)</b></summary>
+
+1. add the [lighthouse-badger-easy.yml](https://github.com/MyActionWay/lighthouse-badger-workflows/blob/master/.github/workflows/lighthouse-badger-easy.yml "Get it") workflow file to a repository
+	* the path has to be `.github/workflows/lighthouse-badger-easy.yml`
+	* it have to be the target repository where you want to add the Lighthouse results (not the case with the other workflow files)
+2. create a new encrypted repository secret [[procedure](https://docs.github.com/en/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-a-repository "Learn how")]
+	* add the secret to the same repository where you added this workflow file
+	* give the secret a name e.&nbsp;g. `LIGHTHOUSE_BADGER_TOKEN`
+	* the value of the secret must be the value of the personal access token for the repository where you want to add the Lighthouse results.
+		* [procedure for creating a personal access token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token "Learn how")
+		* select only the minimum scopes and permissions required e.&nbsp;g. repo
+3. adapt your [lighthouse-badger-easy.yml](https://github.com/MyActionWay/lighthouse-badger-workflows/blob/master/.github/workflows/lighthouse-badger-easy.yml "Get it") file
+	* for manual triggers
+		* you don't have to adjust anything in the workflow file; just use it
+			* [procedure for manually running a workflow on GitHub](https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow#running-a-workflow-on-github "Learn how")
+				<img src="https://raw.githubusercontent.com/sitdisch/cloud/master/images/lighthousebadger_minimal_manual_inputs.png" />
+			* [procedure for manually running a workflow using the GitHub CLI](https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow#running-a-workflow-using-github-cli)
+			* [procedure for manually running a workflow using the REST API](https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow#running-a-workflow-using-the-rest-api)
+	* for all other triggers
+		* adapt this section
+			```yml
+			##############################################################
+			# DEFINE YOUR INPUTS AND TRIGGERS IN THE FOLLOWING
+			##############################################################
+
+			# INPUTS as environmental variables (env)
+			env:
+				URLS: # URL(s) to be checked e.g. 'https://github.com/sitdisch https://github.com/mythemeway'
+				TOKEN_NAME: # target token name e.g. 'LIGHTHOUSE_BADGER_TOKEN'
+
+			# TRIGGERS
+			on:
+			#	page_build:
+			#	schedule:
+			#		- cron: '55 23 * * 0'
+			```
+		* CONSIDER:
+			* INPUTS:
+				* you only have to define `URLS` and `TOKEN_NAME`;
+				* `TOKEN_NAME`: never enter the actual value of the personal access token
+			* TRIGGERS:
+				* `page_build`: Lighthouse results are generated every time after the GitHub page is built
+				* `schedule`:
+					* e.&nbsp;g. `cron: '55 23 * * 0'` executes the [Lighthouse-Badger](https://github.com/myactionway/lighthouse-badger-action "Get it") every Sunday at 23:55
+					* you can check your inputs [here](https://crontab.guru/ "Go there")
+			* hidden defaults (changeable with the other workflow files):
+				* target repository & branch: Repository with this workflow file and master branch
+				* outputs:
+					* badges: pagespeed.svg
+					* reports: yes
+					* output-paths: 
+						* lighthouse_results/mobile
+						* lighthouse_results/desktop
+				* audit types:
+					* mobile:
+						* parameters: '--throttling.cpuSlowdownMultiplier=2' 		
+					* desktop:
+						* parameters: '--throttling.cpuSlowdownMultiplier=1'
+				* other settings:
+					* user who commit: github-actions[bot]
+					* user e-mail address: 41898282+github-actions[bot]@users.noreply.github.com
+					* commit message: Lighthouse-Badger[bot]: Results Added
+
+That's it. Happy audits.
+
+</details><p>
+
 ### [lighthouse-badger-default.yml](https://github.com/MyActionWay/lighthouse-badger-workflows/blob/master/.github/workflows/lighthouse-badger-default.yml "Get it")
 Generates, adds & updates manually/automatically Lighthouse badges & reports from one/multiple input <b>URL(s) to a selected target repository & branch</b>.
 
@@ -96,7 +166,7 @@ Generates, adds & updates manually/automatically Lighthouse badges & reports fro
 			```
 		* CONSIDER:
 			* INPUTS:
-				* you only have to define `TOKEN_NAME` and `URLS`; if any other input is blank, one of these default values will be used instead
+				* you only have to define `URLS` and `TOKEN_NAME`; if any other input is blank, one of these default values will be used instead
 					```yml
 					DEFAULT_REPO_BRANCH: '${{ github.repository }} master' # repo with this file and master branch
 					DEFAULT_BADGES_ARGS: '-b pagespeed -o lighthouse_results -r'
@@ -129,7 +199,7 @@ That's it. Happy audits.
 </details><p>
 
 ### [lighthouse-badger-advanced.yml](https://github.com/MyActionWay/lighthouse-badger-workflows/blob/master/.github/workflows/lighthouse-badger-advanced.yml "Get it")
-Generates, adds & updates manually/automatically Lighthouse badges & reports from one/multiple input <b>URL-group(s) to one/multiple target repo(s)/branch(es) in parallel</b>
+Generates, adds & updates manually/automatically Lighthouse badges & reports from one/multiple input <b>URL-group(s) to one/multiple target repo(s)/branch(es) in parallel</b>.
 
 <details><summary><b>Set it up (click to toggle)</b></summary>
 
@@ -252,6 +322,10 @@ That's it. Happy audits.
 	* The [Branch-Pruner](https://github.com/myactionway/branch-pruner-action "Get it") can help. E.&nbsp;g. put your Lighthouse results on a separate branch and automatically prune that branch with the Pruner, as you like. 
 * The workflow logs do not provide enough detail to diagnose why a workflow, job, or step is not working as expected.
 	* enable [addition debug logging](https://docs.github.com/en/actions/managing-workflow-runs/enabling-debug-logging)
+* You get a failed job because not all remote commits were fetched during parallel computing.
+	* increase `max_push_attempts` in your workflow file (default = 5)
+* You are experiencing strange behavior from GitHub actions.
+	* maybe it's a general incident [[status check](https://www.githubstatus.com/ "Check it")]
 
 ## | Application example
 <a href="https://github.com/mythemeway/Dark-Particle" title="Check it out" target="_blank"><img src="https://raw.githubusercontent.com/sitdisch/cloud/master/gifs/lighthouse_badger_example.gif" /></a>
