@@ -10,7 +10,7 @@
 
 The [Lighthouse-Badger](https://github.com/myactionway/lighthouse-badger-action "Get it") GitHub action makes it easy to manually/automatically generate, add and update Lighthouse badges and reports from one/multiple input URL-group(s) to one/multiple target repo(s)/branch(es) in parallel.
 
-Once you have it [set up](#-setups "Go there"), you only need to add the links to your results once in your use case. The [Lighthouse-Badger](https://github.com/myactionway/lighthouse-badger-action "Get it") will then automatically keep the badges up to date for you. So sit back and let the Badger do the job :wink:.
+Once you have it [set up](#-setups "Go there"), you only need to add the links to your results once in your use case (e.&nbsp;g. Github readme, website,...). The [Lighthouse-Badger](https://github.com/myactionway/lighthouse-badger-action "Get it") will then automatically keep the badges up to date for you. So sit back and let the Badger do the job :wink:.
 
 ## | Credits
 
@@ -53,7 +53,7 @@ Generates, adds & updates manually/automatically Lighthouse badges & reports fro
 
 1. add the [lighthouse-badger-easy.yml](https://github.com/MyActionWay/lighthouse-badger-workflows/blob/master/.github/workflows/lighthouse-badger-easy.yml "Get it") workflow file to a repository
 	* the path has to be `.github/workflows/lighthouse-badger-easy.yml`
-	* it have to be the target repository where you want to add the Lighthouse results (not the case with the other workflow files)
+	* it have to be the target repository where you want to add the Lighthouse results (this is not the case with the other workflow files)
 2. create a new encrypted repository secret [[procedure](https://docs.github.com/en/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-a-repository "Learn how")]
 	* add the secret to the same repository where you added this workflow file
 	* give the secret a name e.&nbsp;g. `LIGHTHOUSE_BADGER_TOKEN`
