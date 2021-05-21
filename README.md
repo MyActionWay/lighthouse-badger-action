@@ -318,14 +318,17 @@ That's it. Happy audits.
 ## | Known issues & possible solutions
 * No scores are displayed in the pagespeed.svg file.
 	* They are there, if not, NA is inserted. Try opening the SVG with a browser and the scores will pop up, I promise.
+* You get a failed job because not all remote commits were fetched during parallel computing.
+	* increase `max_push_attempts` in your workflow file (default = 5)
 * The repository size is growing continuously due to the automatic updating of the badges.
 	* The [Branch-Pruner](https://github.com/myactionway/branch-pruner-action "Get it") can help. E.&nbsp;g. put your Lighthouse results on a separate branch and automatically prune that branch with the Pruner, as you like. 
 * The workflow logs do not provide enough detail to diagnose why a workflow, job, or step is not working as expected.
 	* enable [addition debug logging](https://docs.github.com/en/actions/managing-workflow-runs/enabling-debug-logging)
-* You get a failed job because not all remote commits were fetched during parallel computing.
-	* increase `max_push_attempts` in your workflow file (default = 5)
 * You are experiencing strange behavior from GitHub actions.
 	* maybe it's a general incident [[status check](https://www.githubstatus.com/ "Check it")]
+* Your workflow trigger `schedule` doesn't fire.
+	* in my experience, a workflow file with this trigger must be placed in the default branch
+	* in this [chat](https://github.community/t/schedule-workflows-missing/17653/3 "Go there") Brightran said: <i>"... The workaround is to push something to trigger them. ..."</i> and Hless said: <i>"... It appears to me that it takes while before schedules actions run at all in a new repo"</i>. In my experience, they are right.
 
 ## | Application example
 <a href="https://github.com/mythemeway/Dark-Particle" title="Check it out" target="_blank"><img src="https://raw.githubusercontent.com/sitdisch/cloud/master/gifs/lighthouse_badger_example.gif" /></a>
