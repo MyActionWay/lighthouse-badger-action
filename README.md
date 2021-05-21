@@ -18,7 +18,9 @@ I, [Sitdisch](https://github.com/sitdisch "Visit me"), created the [Lighthouse-B
 
 The badge creation is based on the [Lighthouse-Badges](https://github.com/emazzotta/lighthouse-badges "Go there") repository  [License: [MIT](https://github.com/emazzotta/lighthouse-badges/blob/master/LICENSE.md "Go there"); Copyright (c) 2018 [Emanuele Mazzotta](https://github.com/emazzotta "Visit him")] and the pagespeed badge on the [Readme-Pagespeed-Insights](https://github.com/ankurparihar/readme-pagespeed-insights "Go there") repository  [License: [Apache-2.0](https://github.com/ankurparihar/readme-pagespeed-insights/blob/master/LICENSE "Go there"); Copyright (c) 2021 [Ankur Parihar](https://github.com/ankurparihar "Visit him")]. Check out both. They are magnificent and maybe better suited for your use case than the [Lighthouse-Badger](https://github.com/myactionway/lighthouse-badger-action "Get it").
 
-Last but not least, everything is based on the extraordinary work of the contributors to the <a title="Visit the Lighthouse" target="_blank" href="https://github.com/GoogleChrome/lighthouse"><img src="https://raw.githubusercontent.com/GoogleChrome/lighthouse/master/assets/lighthouse-logo.svg" width="25"/> GoogleChrome/lighthouse </a> repository <b>"Chapeau!"</b>.
+Last but not least, everything is based on the extraordinary work of the contributors to the <a title="Visit the Lighthouse" target="_blank" href="https://github.com/GoogleChrome/lighthouse"><img src="https://raw.githubusercontent.com/GoogleChrome/lighthouse/master/assets/lighthouse-logo.svg" width="25"/> GoogleChrome/lighthouse</a> repository [License: [Apache-2.0](https://github.com/GoogleChrome/lighthouse/blob/master/LICENSE)] <b>"Chapeau!"</b>.
+
+P.S. the badger and military medal icons are from the [googlefonts/noto-emoji](https://github.com/googlefonts/noto-emoji "Go there") repository [License: [Apache-2.0](https://github.com/googlefonts/noto-emoji/blob/main/LICENSE)].
 
 ## | Previews
 
