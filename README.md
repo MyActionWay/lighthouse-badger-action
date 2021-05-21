@@ -14,7 +14,7 @@ Once you have it [set up](#-setups "Go there"), you only need to add the links t
 
 ## | Credits
 
-I, [Sitdisch](https://github.com/sitdisch "Visit me"), created the [Lighthouse-Badger](https://github.com/myactionway/lighthouse-badger-action "Get it") because I needed a GitHub action that would automatically update my Lighthouse badges on a regular basis and I haven't found a suitable solution.
+I, [Sitdisch](https://github.com/sitdisch "Visit me"), created the [Lighthouse-Badger](https://github.com/myactionway/lighthouse-badger-action "Get it") because I needed a GitHub action that would automatically update my Lighthouse badges and reports on a regular basis and I haven't found a suitable solution.
 
 The badge creation is based on the [Lighthouse-Badges](https://github.com/emazzotta/lighthouse-badges "Go there") repository  [License: [MIT](https://github.com/emazzotta/lighthouse-badges/blob/master/LICENSE.md "Go there"); Copyright (c) 2018 [Emanuele Mazzotta](https://github.com/emazzotta "Visit him")] and the pagespeed badge on the [Readme-Pagespeed-Insights](https://github.com/ankurparihar/readme-pagespeed-insights "Go there") repository  [License: [Apache-2.0](https://github.com/ankurparihar/readme-pagespeed-insights/blob/master/LICENSE "Go there"); Copyright (c) 2021 [Ankur Parihar](https://github.com/ankurparihar "Visit him")]. Check out both. They are magnificent and maybe better suited for your use case than the [Lighthouse-Badger](https://github.com/myactionway/lighthouse-badger-action "Get it").
 
@@ -52,14 +52,14 @@ Generates, adds & updates manually/automatically Lighthouse badges & reports fro
 <details><summary><b>Set it up (click to toggle)</b></summary>
 
 1. add the [lighthouse-badger-easy.yml](https://github.com/MyActionWay/lighthouse-badger-workflows/blob/master/.github/workflows/lighthouse-badger-easy.yml "Get it") workflow file to a repository
+	* it has to be the target repository where you want to add the Lighthouse results (this is not the case with the other workflow files)
 	* the path has to be `.github/workflows/lighthouse-badger-easy.yml`
-	* it have to be the target repository where you want to add the Lighthouse results (this is not the case with the other workflow files)
 2. create a new encrypted repository secret [[procedure](https://docs.github.com/en/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-a-repository "Learn how")]
-	* add the secret to the same repository where you added this workflow file
 	* give the secret a name e.&nbsp;g. `LIGHTHOUSE_BADGER_TOKEN`
 	* the value of the secret must be the value of the personal access token for the repository where you want to add the Lighthouse results.
 		* [procedure for creating a personal access token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token "Learn how")
 		* select only the minimum scopes and permissions required e.&nbsp;g. repo
+	* add the secret to the same repository where you added this workflow file
 3. adapt your [lighthouse-badger-easy.yml](https://github.com/MyActionWay/lighthouse-badger-workflows/blob/master/.github/workflows/lighthouse-badger-easy.yml "Get it") file
 	* for manual triggers
 		* you don't have to adjust anything in the workflow file; just use it
@@ -122,15 +122,15 @@ Generates, adds & updates manually/automatically Lighthouse badges & reports fro
 <details><summary><b>Set it up (click to toggle)</b></summary>
 
 1. add the [lighthouse-badger-default.yml](https://github.com/MyActionWay/lighthouse-badger-workflows/blob/master/.github/workflows/lighthouse-badger-default.yml "Get it") workflow file to a repository
-	* the path has to be `.github/workflows/lighthouse-badger-default.yml`
 	* it doesn't have to be the repository where you want to add the Lighthouse results; e.&nbsp;g., you can simply [fork](https://github.com/myactionway/lighthouse-badger-workflows/fork "fork it") the `myactionway/lighthouse-badger-workflows` repository
 		* CONSIDER: with a forked repository, you need to confirm that you want to use a workflow before you can actually use it (repo menu > actions tab > push the button)
+	* the path has to be `.github/workflows/lighthouse-badger-default.yml`
 2. create a new encrypted repository secret [[procedure](https://docs.github.com/en/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-a-repository "Learn how")]
-	* add the secret to the same repository where you added this workflow file
 	* give the secret a name e.&nbsp;g. `LIGHTHOUSE_BADGER_TOKEN`
 	* the value of the secret must be the value of the personal access token for the target repository where you want to add the Lighthouse results.
 		* [procedure for creating a personal access token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token "Learn how")
 		* select only the minimum scopes and permissions required e.&nbsp;g. repo
+	* add the secret to the same repository where you added this workflow file
 3. adapt your [lighthouse-badger-default.yml](https://github.com/MyActionWay/lighthouse-badger-workflows/blob/master/.github/workflows/lighthouse-badger-default.yml "Get it") file
 	* for manual triggers
 		* you don't have to adjust anything in the workflow file; just use it
@@ -204,15 +204,15 @@ Generates, adds & updates manually/automatically Lighthouse badges & reports fro
 <details><summary><b>Set it up (click to toggle)</b></summary>
 
 1. add the [lighthouse-badger-advanced.yml](https://github.com/MyActionWay/lighthouse-badger-workflows/blob/master/.github/workflows/lighthouse-badger-advanced.yml "Get it") workflow file to a repository
-	* the path has to be `.github/workflows/lighthouse-badger-advanced.yml`
 	* it doesn't have to be a repository where you want to add Lighthouse results; e.&nbsp;g., you can simply [fork](https://github.com/myactionway/lighthouse-badger-workflows/fork "fork it") the `myactionway/lighthouse-badger-workflows` repository
 		* CONSIDER: with a forked repository, you need to confirm that you want to use a workflow before you can actually use it (repo menu > actions tab > push the button)
+	* the path has to be `.github/workflows/lighthouse-badger-advanced.yml`
 2. create new encrypted repository secrets [[procedure](https://docs.github.com/en/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-a-repository "Learn how")]
-	* add the secrets to the same repository where you added this workflow file
 	* give the secrets names e.&nbsp;g. `LIGHTHOUSE_BADGER_TOKEN_1` and `LIGHTHOUSE_BADGER_TOKEN_2`
 	* the values of the secrets must be the values of the personal access tokens for the target repositories where you want to add the Lighthouse results.
 		* [procedure for creating a personal access token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token "Learn how")
 		* select only the minimum scopes and permissions required e.&nbsp;g. repo
+	* add the secrets to the same repository where you added this workflow file
 3. adapt your [lighthouse-badger-advanced.yml](https://github.com/MyActionWay/lighthouse-badger-workflows/blob/master/.github/workflows/lighthouse-badger-advanced.yml "Get it") file
 	* define your defaults
 		```yml
@@ -303,8 +303,8 @@ Generates, adds & updates manually/automatically Lighthouse badges & reports fro
 		* CONSIDER: 
 			* you just have to define `NAME`, `URLS` and `BADGES_ARGS` for each group; if you do not define any of the other inputs, your predefined defaults will be used instead
 			* `BADGES_ARGS`: 
-				* set different output-paths for different groups
 				* more information about the optional arguments can be found [here](https://github.com/sitdisch/lighthouse-badges#help "Go there")
+				* set different output-paths for different groups
 				* in contrast to the Lighthouse-Badges repository
 					* do not enter any URL(s) here
 					* mobile or/and desktop is/are always added to your output-path
@@ -321,7 +321,7 @@ That's it. Happy audits.
 * You get a failed job because not all remote commits were fetched during parallel computing.
 	* increase `max_push_attempts` in your workflow file (default = 5)
 * The repository size is growing continuously due to the automatic updating of the badges.
-	* The [Branch-Pruner](https://github.com/myactionway/branch-pruner-action "Get it") can help. E.&nbsp;g. put your Lighthouse results on a separate branch and automatically prune that branch with the Pruner, as you like. 
+	* The [Branch-Pruner](https://github.com/myactionway/branch-pruner-action "Get it") can help. E.&nbsp;g. put your Lighthouse results on a separate branch and automatically prune that branch with the Pruner, as you like. That way, you have the repo size under control and also the ability to see the latest history of your badges and reports without the really old stuff. 
 * The workflow logs do not provide enough detail to diagnose why a workflow, job, or step is not working as expected.
 	* enable [addition debug logging](https://docs.github.com/en/actions/managing-workflow-runs/enabling-debug-logging)
 * You are experiencing strange behavior from GitHub actions.
