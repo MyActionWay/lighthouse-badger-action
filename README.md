@@ -323,7 +323,7 @@ That's it. Happy audits.
 * You get a failed job because not all remote commits were fetched during parallel computing.
 	* increase `max_push_attempts` in your workflow file (default = 5)
 * The repository size is growing continuously due to the automatic updating of the badges.
-	* The [Branch-Pruner](https://github.com/myactionway/branch-pruner-action "Get it") can help. E.&nbsp;g. put your Lighthouse results on a separate branch and automatically prune that branch with the Pruner, as you like. That way, you have the repo size under control and also the ability to see the latest history of your badges and reports without the really old stuff. 
+	* The [Branch-Pruner <img width=60 src="https://repository-images.githubusercontent.com/352585084/3bae0d80-bb12-11eb-86c4-c420ef0fec71"/>](https://github.com/myactionway/branch-pruner-action "Get it") can help. E.&nbsp;g. put your Lighthouse results on a separate branch and automatically prune that branch with the Pruner, as you like. That way, you have the repo size under control and also the ability to see the latest history of your badges and reports without the really old stuff. 
 * The workflow logs do not provide enough detail to diagnose why a workflow, job, or step is not working as expected.
 	* enable [addition debug logging](https://docs.github.com/en/actions/managing-workflow-runs/enabling-debug-logging)
 * You are experiencing strange behavior from GitHub actions.
