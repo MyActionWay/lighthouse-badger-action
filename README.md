@@ -3,7 +3,8 @@
 <p align="center">
 <img src="https://img.shields.io/github/repo-size/myactionway/lighthouse-badger-action?label=RepoSize" />
 <a title="Check it out" target="_blank" href="https://github.com/myactionway/lighthouse-badger-action/blob/master/LICENSE.txt"><img src="https://img.shields.io/github/license/myactionway/lighthouse-badger-action?label=License" /></a>
-<a title="Check it out" target="_blank" href="https://github.com/MyActionWay/lighthouse-badger-action/releases"><img src="https://img.shields.io/github/v/release/myactionway/lighthouse-badger-action?label=LastRelease" /></a>
+<a title="Check it out" target="_blank" href="https://github.com/MyActionWay/lighthouse-badger-action/releases"><img src="https://img.shields.io/github/v/release/myactionway/lighthouse-badger-action?label=LastRelease" /></a><br>
+<a title="Check it out" target="_blank" href="https://github.com/GoogleChrome/lighthouse"><img src="https://img.shields.io/github/package-json/dependency-version/myactionway/lighthouse-badges/lighthouse?label=LighthouseVersion" /></a>
 </p>
 <small><p align="center">[ <a title="Check it out" target="_blank" href="https://github.com/myactionway/lighthouse-badger-workflows">Workflow Readme</a> == <a title="Check it out" target="_blank" href="https://github.com/myactionway/lighthouse-badger-action">Action Readme</a> ]</p></small>
 <hr>
