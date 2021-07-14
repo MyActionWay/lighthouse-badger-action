@@ -1,12 +1,15 @@
-<h1 align="center">Lighthouse-Badger | GitHub Action</h1>
-<p align="center"><img src="https://repository-images.githubusercontent.com/359823564/31d7b800-af1f-11eb-8d4b-431075ac940c"/></p>
-<p align="center">
+<div align='center'>
+<h1>Lighthouse-Badger | GitHub Action</h1>
+<img src="https://repository-images.githubusercontent.com/359823564/31d7b800-af1f-11eb-8d4b-431075ac940c"/><br>
+<a title="Check it out" target="_blank" href="https://github.com/GoogleChrome/lighthouse"><img src="https://img.shields.io/github/package-json/dependency-version/myactionway/lighthouse-badges/lighthouse?label=Lighthouse&logo=lighthouse" /></a><br>
 <img src="https://img.shields.io/github/repo-size/myactionway/lighthouse-badger-action?label=RepoSize" />
-<a title="Check it out" target="_blank" href="https://github.com/myactionway/lighthouse-badger-action/blob/master/LICENSE.txt"><img src="https://img.shields.io/github/license/myactionway/lighthouse-badger-action?label=License" /></a>
+<a title="Check it out" target="_blank" href="https://github.com/myactionway/lighthouse-badger-action/blob/master/LICENSE.txt"><img src="https://img.shields.io/github/license/myactionway/lighthouse-badger-action?label=License&color=2A2E30" /></a>
 <a title="Check it out" target="_blank" href="https://github.com/MyActionWay/lighthouse-badger-action/releases"><img src="https://img.shields.io/github/v/release/myactionway/lighthouse-badger-action?label=LastRelease" /></a><br>
-<a title="Check it out" target="_blank" href="https://github.com/GoogleChrome/lighthouse"><img src="https://img.shields.io/github/package-json/dependency-version/myactionway/lighthouse-badges/lighthouse?label=Lighthouse&logo=lighthouse" /></a>
-</p>
-<small><p align="center">[ <a title="Check it out" target="_blank" href="https://github.com/myactionway/lighthouse-badger-workflows">Workflow Readme</a> == <a title="Check it out" target="_blank" href="https://github.com/myactionway/lighthouse-badger-action">Action Readme</a> ]</p></small>
+<a title="Check Snyk out" target="_blank" href="https://snyk.io/"><img src="https://img.shields.io/badge/Snyk-Vulnerabilities-2A2E30.svg?logo=snyk" /></a><br>
+<a title="Explore it" target="_blank" href="https://snyk.io/test/github/MyActionWay/lighthouse-badges"><img loading="eager" alt="&nbsp;pending..." height=25 src="https://img.shields.io/snyk/vulnerabilities/github/MyActionWay/lighthouse-badges?label=&cacheSeconds=maxAge" /></a><br>
+<b>Full Report: <a title="Check it out" target="_blank" href="https://snyk.io/test/github/MyActionWay/lighthouse-badges">Last&nbsp;One</a></b><br>
+[ <a title="Check it out" target="_blank" href="https://github.com/myactionway/lighthouse-badger-workflows">Workflow Readme</a> == <a title="Check it out" target="_blank" href="https://github.com/myactionway/lighthouse-badger-action">Action Readme</a> ]
+</div>
 <hr>
 
 The [Lighthouse-Badger](https://github.com/myactionway/lighthouse-badger-action "Get it") GitHub action makes it easy to manually/automatically generate, add and update Lighthouse badges and reports from one/multiple input URL-group(s) to one/multiple target repo(s)/branch(es) in parallel.
@@ -17,7 +20,7 @@ Once you have it [set up](#-setups "Go there"), you only need to add the links t
 
 I, [Sitdisch](https://github.com/sitdisch "Visit me"), created the [Lighthouse-Badger](https://github.com/myactionway/lighthouse-badger-action "Get it") because I needed a GitHub action that would automatically update my Lighthouse badges and reports on a regular basis and I haven't found a suitable solution.
 
-The badge creation is based on the [Lighthouse-Badges](https://github.com/emazzotta/lighthouse-badges "Go there") repository  [License: [MIT](https://github.com/emazzotta/lighthouse-badges/blob/master/LICENSE.md "Go there"); Copyright (c) 2018 [Emanuele Mazzotta](https://github.com/emazzotta "Visit him")] and the pagespeed badge on the [Readme-Pagespeed-Insights](https://github.com/ankurparihar/readme-pagespeed-insights "Go there") repository  [License: [Apache-2.0](https://github.com/ankurparihar/readme-pagespeed-insights/blob/master/LICENSE "Go there"); Copyright (c) 2021 [Ankur Parihar](https://github.com/ankurparihar "Visit him")]. Check out both. They are magnificent and maybe better suited for your use case than the [Lighthouse-Badger](https://github.com/myactionway/lighthouse-badger-action "Get it").
+The badge creation is based on the [Lighthouse-Badges](https://github.com/emazzotta/lighthouse-badges "Go there") repository  [License: [MIT](https://github.com/emazzotta/lighthouse-badges/blob/master/LICENSE.md "Go there"); Copyright ©️ 2018 [Emanuele Mazzotta](https://github.com/emazzotta "Visit him")] and the pagespeed badge on the [Readme-Pagespeed-Insights](https://github.com/ankurparihar/readme-pagespeed-insights "Go there") repository  [License: [Apache-2.0](https://github.com/ankurparihar/readme-pagespeed-insights/blob/master/LICENSE "Go there"); Copyright ©️ 2021 [Ankur Parihar](https://github.com/ankurparihar "Visit him")]. Check out both. They are magnificent and maybe better suited for your use case than the [Lighthouse-Badger](https://github.com/myactionway/lighthouse-badger-action "Get it").
 
 Last but not least, everything is based on the extraordinary work of the contributors to the <a title="Visit the Lighthouse" target="_blank" href="https://github.com/GoogleChrome/lighthouse"><img src="https://raw.githubusercontent.com/GoogleChrome/lighthouse/master/assets/lighthouse-logo.svg" width="25"/> GoogleChrome/lighthouse</a> repository [License: [Apache-2.0](https://github.com/GoogleChrome/lighthouse/blob/master/LICENSE)] <b>"Chapeau!"</b>.
 
@@ -117,7 +120,7 @@ Generates, adds & updates manually/automatically Lighthouse badges & reports fro
 
 That's it. Happy audits.
 
-</details><p>
+</details>
 
 ### [lighthouse-badger-default.yml](https://github.com/MyActionWay/lighthouse-badger-workflows/blob/master/.github/workflows/lighthouse-badger-default.yml "Get it")
 Generates, adds & updates manually/automatically Lighthouse badges & reports from one/multiple input <b>URL(s) to a selected target repository & branch</b>.
@@ -199,7 +202,7 @@ Generates, adds & updates manually/automatically Lighthouse badges & reports fro
 
 That's it. Happy audits.
 
-</details><p>
+</details>
 
 ### [lighthouse-badger-advanced.yml](https://github.com/MyActionWay/lighthouse-badger-workflows/blob/master/.github/workflows/lighthouse-badger-advanced.yml "Get it")
 Generates, adds & updates manually/automatically Lighthouse badges & reports from one/multiple input <b>URL-group(s) to one/multiple target repo(s)/branch(es) in parallel</b>.
@@ -269,7 +272,7 @@ Generates, adds & updates manually/automatically Lighthouse badges & reports fro
 					* no predefined inputs; the `env` defined in this workflow file are used instead when this trigger is triggered
 					* [procedure for manually running a workflow on GitHub](https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow#running-a-workflow-on-github "Learn how")
 					* [procedure for manually running a workflow using the GitHub CLI](https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow#running-a-workflow-using-github-cli)
-					* [procedure for manually running a workflow using the REST API](https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow#running-a-workflow-using-the-rest-api)<p>
+					* [procedure for manually running a workflow using the REST API](https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow#running-a-workflow-using-the-rest-api)<p></p>
 	* define your settings for the different input URL-Groups
 		```yml
 		##############################################################
@@ -316,7 +319,7 @@ Generates, adds & updates manually/automatically Lighthouse badges & reports fro
 
 That's it. Happy audits.
 
-</details><p>
+</details>
 
 ## | Known issues & possible solutions
 * No scores are displayed in the pagespeed.svg file.
@@ -335,3 +338,11 @@ That's it. Happy audits.
 
 ## | Application example
 <a href="https://github.com/mythemeway/Dark-Particle" title="Check it out" target="_blank"><img src="https://raw.githubusercontent.com/sitdisch/cloud/master/gifs/lighthouse_badger_example.gif" /></a>
+
+> ### Note on protected brand names and logos:
+> * The use of protected brand names, trade names, utility models and brand logos on this website does not constitute an infringement of copyright; rather it serves as an illustrative note. Even if this is not marked as such at the respective points, the corresponding legal provisions always apply.
+> * The brand names and logos used are the property of their respective owners and are subject to their copyright provisions.
+
+> ### Readme uses:
+> * [Shields.io](https://github.com/badges/shields "Check it out") [License: [CC0 1.0](https://github.com/badges/shields/blob/master/LICENSE "Go there")] 
+> * [Simple Icons](https://simpleicons.org/ "Check it out") [License: [CC0 1.0](https://github.com/simple-icons/simple-icons/blob/develop/LICENSE.md "Go there")]
