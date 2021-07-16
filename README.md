@@ -5,7 +5,7 @@
 <img src="https://img.shields.io/github/repo-size/myactionway/lighthouse-badger-action?label=RepoSize" />
 <a title="Check it out" target="_blank" href="https://github.com/myactionway/lighthouse-badger-action/blob/master/LICENSE.txt"><img src="https://img.shields.io/github/license/myactionway/lighthouse-badger-action?label=License&color=2A2E30" /></a>
 <a title="Check it out" target="_blank" href="https://github.com/MyActionWay/lighthouse-badger-action/releases"><img src="https://img.shields.io/github/v/release/myactionway/lighthouse-badger-action?label=LastRelease" /></a><br>
-<a title="Check Snyk out" target="_blank" href="https://snyk.io/"><img src="https://img.shields.io/badge/Snyk-Vulnerabilities-2A2E30.svg?logo=snyk" /></a><br>
+<a title="Explore it" target="_blank" href="https://snyk.io/test/github/MyActionWay/lighthouse-badges"><img src="https://img.shields.io/badge/Snyk-Vulnerabilities-2A2E30.svg?logo=snyk" /></a><br>
 <a title="Explore it" target="_blank" href="https://snyk.io/test/github/MyActionWay/lighthouse-badges"><img loading="eager" alt="&nbsp;pending..." height=25 src="https://img.shields.io/snyk/vulnerabilities/github/MyActionWay/lighthouse-badges?label=&cacheSeconds=maxAge" /></a><br>
 <b>Full Report: <a title="Check it out" target="_blank" href="https://snyk.io/test/github/MyActionWay/lighthouse-badges">Last&nbsp;One</a></b><br>
 [ <a title="Check it out" target="_blank" href="https://github.com/myactionway/lighthouse-badger-workflows">Workflow Readme</a> == <a title="Check it out" target="_blank" href="https://github.com/myactionway/lighthouse-badger-action">Action Readme</a> ]
@@ -339,10 +339,15 @@ That's it. Happy audits.
 ## | Application example
 <a href="https://github.com/mythemeway/Dark-Particle" title="Check it out" target="_blank"><img src="https://raw.githubusercontent.com/sitdisch/cloud/master/gifs/lighthouse_badger_example.gif" /></a>
 
-> ### Note on protected brand names and logos:
-> * The use of protected brand names, trade names, utility models and brand logos on this website does not constitute an infringement of copyright; rather it serves as an illustrative note. Even if this is not marked as such at the respective points, the corresponding legal provisions always apply.
+## | Appendix
+### Note on protected brand names and logos
+> * The use of protected brand names, trade names, utility models and brand logos on this website does not constitute an infringement of copyright; rather, it serves as an illustrative note. Even if this is not marked as such at the respective points, the corresponding legal provisions always apply.
 > * The brand names and logos used are the property of their respective owners and are subject to their copyright provisions.
 
-> ### Readme uses:
+### Note on liability for links
+> * This README contains links to external third-party websites. The README operator has no influence on the content of these sites. Therefore, he cannot assume any liability. Instead, the respective provider is always responsible for the content.
+> * The linked pages were checked for possible legal violations at the time of linking and illegal content wasn't discernible. A permanent control of the linked pages is unreasonable without concrete evidence of an infringement. However, if the README operator becomes aware of such a violation, he will act immediately. 
+
+### Readme uses
 > * [Shields.io](https://github.com/badges/shields "Check it out") [License: [CC0 1.0](https://github.com/badges/shields/blob/master/LICENSE "Go there")] 
 > * [Simple Icons](https://simpleicons.org/ "Check it out") [License: [CC0 1.0](https://github.com/simple-icons/simple-icons/blob/develop/LICENSE.md "Go there")]
