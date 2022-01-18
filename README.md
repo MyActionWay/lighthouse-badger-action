@@ -3,10 +3,10 @@
 <img src="https://repository-images.githubusercontent.com/359823564/31d7b800-af1f-11eb-8d4b-431075ac940c"/><br>
 <a title="Check it out" target="_blank" href="https://github.com/GoogleChrome/lighthouse"><img src="https://img.shields.io/github/package-json/dependency-version/myactionway/lighthouse-badges/lighthouse?label=Lighthouse&logo=lighthouse" /></a><br>
 <img src="https://img.shields.io/github/repo-size/myactionway/lighthouse-badger-action?label=RepoSize" />
-<a title="Check it out" target="_blank" href="https://github.com/myactionway/lighthouse-badger-action/blob/master/LICENSE.txt"><img src="https://img.shields.io/github/license/myactionway/lighthouse-badger-action?label=License&color=2A2E30" /></a>
+<a title="Check it out" target="_blank" href="https://github.com/myactionway/lighthouse-badger-action/blob/main/LICENSE.txt"><img src="https://img.shields.io/github/license/myactionway/lighthouse-badger-action?label=License&color=2A2E30" /></a>
 <a title="Check it out" target="_blank" href="https://github.com/MyActionWay/lighthouse-badger-action/releases"><img src="https://img.shields.io/github/v/release/myactionway/lighthouse-badger-action?label=LastRelease" /></a><br>
 <a title="Explore it" target="_blank" href="https://snyk.io/test/github/MyActionWay/lighthouse-badges"><img src="https://img.shields.io/badge/Snyk-Vulnerabilities-2A2E30.svg?logo=snyk" /></a><br>
-<a title="Explore it" target="_blank" href="https://snyk.io/test/github/MyActionWay/lighthouse-badges"><img loading="eager" alt="&nbsp;pending..." height=25 src="https://img.shields.io/snyk/vulnerabilities/github/MyActionWay/lighthouse-badges?label=&cacheSeconds=maxAge" /></a><br>
+<a title="Explore it" target="_blank" href="https://snyk.io/test/github/MyActionWay/lighthouse-badges"><img loading="eager" alt="&nbsp;pending..." height="25" src="https://img.shields.io/snyk/vulnerabilities/github/MyActionWay/lighthouse-badges?label=&cacheSeconds=maxAge" /></a><br>
 <b>Full Report: <a title="Check it out" target="_blank" href="https://snyk.io/test/github/MyActionWay/lighthouse-badges">Last&nbsp;One</a></b><br>
 [ <a title="Check it out" target="_blank" href="https://github.com/myactionway/lighthouse-badger-workflows">Workflow Readme</a> == <a title="Check it out" target="_blank" href="https://github.com/myactionway/lighthouse-badger-action">Action Readme</a> ]
 </div>
@@ -20,7 +20,7 @@ Once you have it [set up](#-setups "Go there"), you only need to add the links t
 
 I, [Sitdisch](https://github.com/sitdisch "Visit me"), created the [Lighthouse-Badger](https://github.com/myactionway/lighthouse-badger-action "Get it") because I needed a GitHub action that would automatically update my Lighthouse badges and reports on a regular basis and I haven't found a suitable solution.
 
-The badge creation is based on the [Lighthouse-Badges](https://github.com/emazzotta/lighthouse-badges "Go there") repository  [License: [MIT](https://github.com/emazzotta/lighthouse-badges/blob/master/LICENSE.md "Go there"); Copyright ©️ 2018 [Emanuele Mazzotta](https://github.com/emazzotta "Visit him")] and the pagespeed badge on the [Readme-Pagespeed-Insights](https://github.com/ankurparihar/readme-pagespeed-insights "Go there") repository  [License: [Apache-2.0](https://github.com/ankurparihar/readme-pagespeed-insights/blob/master/LICENSE "Go there"); Copyright ©️ 2021 [Ankur Parihar](https://github.com/ankurparihar "Visit him")]. Check out both. They are magnificent and maybe better suited for your use case than the [Lighthouse-Badger](https://github.com/myactionway/lighthouse-badger-action "Get it").
+The badge creation is based on the [Lighthouse-Badges](https://github.com/emazzotta/lighthouse-badges "Go there") repository  [License: [MIT](https://github.com/emazzotta/lighthouse-badges/blob/master/LICENSE.md "Go there"); Copyright: ©️ 2018 [Emanuele Mazzotta](https://github.com/emazzotta "Visit him"); Changes: made] and the pagespeed badge on the [Readme-Pagespeed-Insights](https://github.com/ankurparihar/readme-pagespeed-insights "Go there") repository  [License: [Apache-2.0](https://github.com/ankurparihar/readme-pagespeed-insights/blob/master/LICENSE "Go there"); Copyright: ©️ 2021 [Ankur Parihar](https://github.com/ankurparihar "Visit him"); Changes: made]. Check out both. They are magnificent and maybe better suited for your use case than the [Lighthouse-Badger](https://github.com/myactionway/lighthouse-badger-action "Get it").
 
 Last but not least, everything is based on the extraordinary work of the contributors to the <a title="Visit the Lighthouse" target="_blank" href="https://github.com/GoogleChrome/lighthouse"><img src="https://raw.githubusercontent.com/GoogleChrome/lighthouse/master/assets/lighthouse-logo.svg" width="25"/> GoogleChrome/lighthouse</a> repository [License: [Apache-2.0](https://github.com/GoogleChrome/lighthouse/blob/master/LICENSE)] <b>"Chapeau!"</b>.
 
@@ -52,12 +52,12 @@ Examples: <a href="https://htmlpreview.github.io/?https://raw.githubusercontent.
 
 First, choose a workflow file:
 
-### [lighthouse-badger-easy.yml](https://github.com/MyActionWay/lighthouse-badger-workflows/blob/master/.github/workflows/lighthouse-badger-easy.yml "Get it")
-Generates, adds & updates manually/automatically Lighthouse badges & reports from one/multiple input <b>URL(s) to the current repository & master branch with minimal settings</b>.
+### [lighthouse-badger-easy.yml](https://github.com/MyActionWay/lighthouse-badger-workflows/blob/main/.github/workflows/lighthouse-badger-easy.yml "Get it")
+Generates, adds & updates manually/automatically Lighthouse badges & reports from one/multiple input <b>URL(s) to the current repository & main branch with minimal settings</b>.
 
 <details><summary><b>Set it up (click to toggle)</b></summary>
 
-1. add the [lighthouse-badger-easy.yml](https://github.com/MyActionWay/lighthouse-badger-workflows/blob/master/.github/workflows/lighthouse-badger-easy.yml "Get it") workflow file to a repository
+1. add the [lighthouse-badger-easy.yml](https://github.com/MyActionWay/lighthouse-badger-workflows/blob/main/.github/workflows/lighthouse-badger-easy.yml "Get it") workflow file to a repository
 	* it has to be the target repository where you want to add the Lighthouse results (this is not the case with the other workflow files)
 	* the path has to be `.github/workflows/lighthouse-badger-easy.yml`
 2. create a new encrypted repository secret [[procedure](https://docs.github.com/en/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-a-repository "Learn how")]
@@ -66,7 +66,7 @@ Generates, adds & updates manually/automatically Lighthouse badges & reports fro
 		* [procedure for creating a personal access token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token "Learn how")
 		* select only the minimum scopes and permissions required e.&nbsp;g. repo
 	* add the secret to the same repository where you added this workflow file
-3. adapt your [lighthouse-badger-easy.yml](https://github.com/MyActionWay/lighthouse-badger-workflows/blob/master/.github/workflows/lighthouse-badger-easy.yml "Get it") file
+3. adapt your [lighthouse-badger-easy.yml](https://github.com/MyActionWay/lighthouse-badger-workflows/blob/main/.github/workflows/lighthouse-badger-easy.yml "Get it") file
 	* for manual triggers
 		* you don't have to adjust anything in the workflow file; just use it
 			* [procedure for manually running a workflow on GitHub](https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow#running-a-workflow-on-github "Learn how")
@@ -101,7 +101,7 @@ Generates, adds & updates manually/automatically Lighthouse badges & reports fro
 					* e.&nbsp;g. `cron: '55 23 * * 0'` executes the [Lighthouse-Badger](https://github.com/myactionway/lighthouse-badger-action "Get it") every Sunday at 23:55
 					* you can check your inputs [here](https://crontab.guru/ "Go there")
 			* hidden defaults (changeable with the other workflow files):
-				* target repository & branch: Repository with this workflow file and master branch
+				* target repository & branch: Repository with this workflow file and main branch
 				* outputs:
 					* badges: pagespeed.svg
 					* reports: yes
@@ -122,12 +122,12 @@ That's it. Happy audits.
 
 </details>
 
-### [lighthouse-badger-default.yml](https://github.com/MyActionWay/lighthouse-badger-workflows/blob/master/.github/workflows/lighthouse-badger-default.yml "Get it")
+### [lighthouse-badger-default.yml](https://github.com/MyActionWay/lighthouse-badger-workflows/blob/main/.github/workflows/lighthouse-badger-default.yml "Get it")
 Generates, adds & updates manually/automatically Lighthouse badges & reports from one/multiple input <b>URL(s) to a selected target repository & branch</b>.
 
 <details><summary><b>Set it up (click to toggle)</b></summary>
 
-1. add the [lighthouse-badger-default.yml](https://github.com/MyActionWay/lighthouse-badger-workflows/blob/master/.github/workflows/lighthouse-badger-default.yml "Get it") workflow file to a repository
+1. add the [lighthouse-badger-default.yml](https://github.com/MyActionWay/lighthouse-badger-workflows/blob/main/.github/workflows/lighthouse-badger-default.yml "Get it") workflow file to a repository
 	* it doesn't have to be the repository where you want to add the Lighthouse results; e.&nbsp;g., you can simply [fork](https://github.com/myactionway/lighthouse-badger-workflows/fork "fork it") the `myactionway/lighthouse-badger-workflows` repository
 		* CONSIDER: with a forked repository, you need to confirm that you want to use a workflow before you can actually use it (repo menu > actions tab > push the button)
 	* the path has to be `.github/workflows/lighthouse-badger-default.yml`
@@ -137,7 +137,7 @@ Generates, adds & updates manually/automatically Lighthouse badges & reports fro
 		* [procedure for creating a personal access token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token "Learn how")
 		* select only the minimum scopes and permissions required e.&nbsp;g. repo
 	* add the secret to the same repository where you added this workflow file
-3. adapt your [lighthouse-badger-default.yml](https://github.com/MyActionWay/lighthouse-badger-workflows/blob/master/.github/workflows/lighthouse-badger-default.yml "Get it") file
+3. adapt your [lighthouse-badger-default.yml](https://github.com/MyActionWay/lighthouse-badger-workflows/blob/main/.github/workflows/lighthouse-badger-default.yml "Get it") file
 	* for manual triggers
 		* you don't have to adjust anything in the workflow file; just use it
 			* [procedure for manually running a workflow on GitHub](https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow#running-a-workflow-on-github "Learn how")
@@ -155,7 +155,7 @@ Generates, adds & updates manually/automatically Lighthouse badges & reports fro
 			env:
 				URLS: # URL(s) to be checked e.g. 'https://github.com/sitdisch https://github.com/mythemeway'
 				TOKEN_NAME: # target token name e.g. 'LIGHTHOUSE_BADGER_TOKEN'
-				REPO_BRANCH: # target repository & branch e.g. 'dummy/mytargetrepo master'
+				REPO_BRANCH: # target repository & branch e.g. 'dummy/mytargetrepo main'
 				BADGES_ARGS: # badge-style '-b {flat,...}', preceding-label '-l "Lighthouse "', output-path '-o lighthouse_results/dummy', save-report '-r', single-badge '-s'
 				AUDIT_TYPE: # 'mobile', 'desktop', 'both' or 'both_p' 
 				MOBILE_LIGHTHOUSE_PARAMS: # Lighthouse parameters mobile audit
@@ -174,7 +174,7 @@ Generates, adds & updates manually/automatically Lighthouse badges & reports fro
 			* INPUTS:
 				* you only have to define `URLS` and `TOKEN_NAME`; if any other input is blank, one of these default values will be used instead
 					```yml
-					DEFAULT_REPO_BRANCH: '${{ github.repository }} master' # repo with this file and master branch
+					DEFAULT_REPO_BRANCH: '${{ github.repository }} main' # repo with this file and main branch
 					DEFAULT_BADGES_ARGS: '-b pagespeed -o lighthouse_results -r'
 					DEFAULT_AUDIT_TYPE: 'both'
 					DEFAULT_MOBILE_LIGHTHOUSE_PARAMS: '--throttling.cpuSlowdownMultiplier=2'
@@ -204,12 +204,12 @@ That's it. Happy audits.
 
 </details>
 
-### [lighthouse-badger-advanced.yml](https://github.com/MyActionWay/lighthouse-badger-workflows/blob/master/.github/workflows/lighthouse-badger-advanced.yml "Get it")
+### [lighthouse-badger-advanced.yml](https://github.com/MyActionWay/lighthouse-badger-workflows/blob/main/.github/workflows/lighthouse-badger-advanced.yml "Get it")
 Generates, adds & updates manually/automatically Lighthouse badges & reports from one/multiple input <b>URL-group(s) to one/multiple target repo(s)/branch(es) in parallel</b>.
 
 <details><summary><b>Set it up (click to toggle)</b></summary>
 
-1. add the [lighthouse-badger-advanced.yml](https://github.com/MyActionWay/lighthouse-badger-workflows/blob/master/.github/workflows/lighthouse-badger-advanced.yml "Get it") workflow file to a repository
+1. add the [lighthouse-badger-advanced.yml](https://github.com/MyActionWay/lighthouse-badger-workflows/blob/main/.github/workflows/lighthouse-badger-advanced.yml "Get it") workflow file to a repository
 	* it doesn't have to be a repository where you want to add Lighthouse results; e.&nbsp;g., you can simply [fork](https://github.com/myactionway/lighthouse-badger-workflows/fork "fork it") the `myactionway/lighthouse-badger-workflows` repository
 		* CONSIDER: with a forked repository, you need to confirm that you want to use a workflow before you can actually use it (repo menu > actions tab > push the button)
 	* the path has to be `.github/workflows/lighthouse-badger-advanced.yml`
@@ -219,7 +219,7 @@ Generates, adds & updates manually/automatically Lighthouse badges & reports fro
 		* [procedure for creating a personal access token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token "Learn how")
 		* select only the minimum scopes and permissions required e.&nbsp;g. repo
 	* add the secrets to the same repository where you added this workflow file
-3. adapt your [lighthouse-badger-advanced.yml](https://github.com/MyActionWay/lighthouse-badger-workflows/blob/master/.github/workflows/lighthouse-badger-advanced.yml "Get it") file
+3. adapt your [lighthouse-badger-advanced.yml](https://github.com/MyActionWay/lighthouse-badger-workflows/blob/main/.github/workflows/lighthouse-badger-advanced.yml "Get it") file
 	* define your defaults
 		```yml
 		##############################################################
@@ -229,7 +229,7 @@ Generates, adds & updates manually/automatically Lighthouse badges & reports fro
 		# INPUTS as environmental variables (env)
 		env:
 			TOKEN_NAME: # target token name e.g. 'LIGHTHOUSE_BADGER_TOKEN_1'
-			REPO_BRANCH: # target repository & branch e.g. 'dummy/mytargetrepo_1 master'
+			REPO_BRANCH: # target repository & branch e.g. 'dummy/mytargetrepo_1 main'
 			AUDIT_TYPE: # 'mobile', 'desktop', 'both' or 'both_p' 
 			MOBILE_LIGHTHOUSE_PARAMS: # Lighthouse parameters mobile audit
 			DESKTOP_LIGHTHOUSE_PARAMS: # Lighthouse parameters desktop audit
@@ -250,7 +250,7 @@ Generates, adds & updates manually/automatically Lighthouse badges & reports fro
 				* all inputs except `TOKEN_NAME` have predefined values; you can, but you don't have to overwrite them
 					```yml
 					# Predefined values
-					REPO_BRANCH: '${{ github.repository }} master' # repo with this file and master branch
+					REPO_BRANCH: '${{ github.repository }} main' # repo with this file and main branch
 					AUDIT_TYPE: 'both'
 					MOBILE_LIGHTHOUSE_PARAMS: '--throttling.cpuSlowdownMultiplier=2'
 					DESKTOP_LIGHTHOUSE_PARAMS: '--preset=desktop --throttling.cpuSlowdownMultiplier=1'
@@ -296,7 +296,7 @@ Generates, adds & updates manually/automatically Lighthouse badges & reports fro
 			URLS: 'https://mythemeway.github.io/Dark-Particle/ https://mythemeway.github.io/Dark-Particle/projects/2020/10/31/project-1.html'
 			BADGES_ARGS: '-b flat -o lighthouse_results/second_group -r'
 		#	TOKEN_NAME: # e.g. 'LIGHTHOUSE_BADGER_TOKEN_2'
-		#	REPO_BRANCH: # e.g. 'dummy/mytargetrepo_2 master'
+		#	REPO_BRANCH: # e.g. 'dummy/mytargetrepo_2 main'
 		#	AUDIT_TYPE:
 		#	MOBILE_LIGHTHOUSE_PARAMS:
 		#	DESKTOP_LIGHTHOUSE_PARAMS:
@@ -327,7 +327,7 @@ That's it. Happy audits.
 * You get a failed job because not all remote commits were fetched during parallel computing.
 	* increase `max_push_attempts` in your workflow file (default = 5)
 * The repository size is growing continuously due to the automatic updating of the badges.
-	* The [Branch-Pruner <img width=60 src="https://repository-images.githubusercontent.com/352585084/3bae0d80-bb12-11eb-86c4-c420ef0fec71"/>](https://github.com/myactionway/branch-pruner-action "Get it") can help. E.&nbsp;g. put your Lighthouse results on a separate branch and automatically prune that branch with the Pruner, as you like. That way, you have the repo size under control and also the ability to see the latest history of your badges and reports without the really old stuff. 
+	* The [Branch-Pruner <img width="60" src="https://repository-images.githubusercontent.com/352585084/3bae0d80-bb12-11eb-86c4-c420ef0fec71"/>](https://github.com/myactionway/branch-pruner-action "Get it") can help. E.&nbsp;g. put your Lighthouse results on a separate branch and automatically prune that branch with the Pruner, as you like. That way, you have the repo size under control and also the ability to see the latest history of your badges and reports without the really old stuff. 
 * The workflow logs do not provide enough detail to diagnose why a workflow, job, or step is not working as expected.
 	* enable [addition debug logging](https://docs.github.com/en/actions/managing-workflow-runs/enabling-debug-logging)
 * You are experiencing strange behavior from GitHub actions.
@@ -343,6 +343,7 @@ That's it. Happy audits.
 ### Note on protected brand names and logos
 > * The use of protected brand names, trade names, utility models and brand logos on this website does not constitute an infringement of copyright; rather, it serves as an illustrative note. Even if this is not marked as such at the respective points, the corresponding legal provisions always apply.
 > * The brand names and logos used are the property of their respective owners and are subject to their copyright provisions.
+> * This offer is in no way related to the legal entities of the protected brand names and logos used.
 
 ### Note on liability for links
 > * This README contains links to external third-party websites. The README operator has no influence on the content of these sites. Therefore, he cannot assume any liability. Instead, the respective provider is always responsible for the content.
