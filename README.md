@@ -1,6 +1,6 @@
 <div align='center'>
 <h1>Lighthouse-Badger | GitHub Action</h1>
-<img src="https://repository-images.githubusercontent.com/359823564/31d7b800-af1f-11eb-8d4b-431075ac940c"/><br>
+<img src="https://repository-images.githubusercontent.com/359823564/3353b8ed-8000-4394-a3f6-265370fd3235"/><br>
 <a title="Check it out" target="_blank" href="https://github.com/GoogleChrome/lighthouse"><img src="https://img.shields.io/github/package-json/dependency-version/myactionway/lighthouse-badges/lighthouse?label=Lighthouse&logo=lighthouse&cacheSeconds=3600" /></a><br>
 <img src="https://img.shields.io/github/repo-size/myactionway/lighthouse-badger-action?label=RepoSize&cacheSeconds=3600" />
 <a title="Check it out" target="_blank" href="https://github.com/myactionway/lighthouse-badger-action/blob/main/LICENSE.txt"><img src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/License-MIT.svg" /></a>
@@ -327,7 +327,7 @@ That's it. Happy audits.
 * You get a failed job because not all remote commits were fetched during parallel computing.
 	* increase `max_push_attempts` in your workflow file (default = 5)
 * The repository size is growing continuously due to the automatic updating of the badges.
-	* The [Branch-Pruner <img align="top" width="70" src="https://repository-images.githubusercontent.com/352585084/3bae0d80-bb12-11eb-86c4-c420ef0fec71"/>](https://github.com/myactionway/branch-pruner-action "Get it") can help. E.&nbsp;g. put your Lighthouse results on a separate branch and automatically prune that branch with the Pruner, as you like. That way, you have the repo size under control and also the ability to see the latest history of your badges and reports without the really old stuff. 
+	* The [Branch-Pruner <img align="top" width="70" src="https://repository-images.githubusercontent.com/352585266/cc34310b-3ab2-4085-b5f5-b1b2cc306a64"/>](https://github.com/myactionway/branch-pruner-action "Get it") can help. E.&nbsp;g. put your Lighthouse results on a separate branch and automatically prune that branch with the Pruner, as you like. That way, you have the repo size under control and also the ability to see the latest history of your badges and reports without the really old stuff. 
 * The workflow logs do not provide enough detail to diagnose why a workflow, job, or step is not working as expected.
 	* enable [addition debug logging](https://docs.github.com/en/actions/managing-workflow-runs/enabling-debug-logging)
 * You are experiencing strange behavior from GitHub actions.
