@@ -1,6 +1,6 @@
 <div align='center'>
 <h1>Lighthouse-Badger | GitHub Action</h1>
-<img src="https://repository-images.githubusercontent.com/359823564/3353b8ed-8000-4394-a3f6-265370fd3235"/><br>
+<img src="https://repository-images.githubusercontent.com/359827195/1a084a2e-f30b-4c5d-b4a8-a3ce60d6f945"/><br>
 <a title="Check it out" target="_blank" href="https://github.com/GoogleChrome/lighthouse"><img src="https://img.shields.io/github/package-json/dependency-version/myactionway/lighthouse-badges/lighthouse?label=Lighthouse&logo=lighthouse&cacheSeconds=3600" /></a><br>
 <img src="https://img.shields.io/github/repo-size/myactionway/lighthouse-badger-action?label=RepoSize&cacheSeconds=3600" />
 <a title="Check it out" target="_blank" href="https://github.com/myactionway/lighthouse-badger-action/blob/main/LICENSE.txt"><img src="https://raw.githubusercontent.com/sitdisch/cloud/master/badges/particle/License-MIT.svg" /></a>
