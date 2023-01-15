@@ -14,7 +14,9 @@
 
 The [Lighthouse-Badger](https://github.com/myactionway/lighthouse-badger-action "Get it") GitHub action makes it easy to manually/automatically generate, add and update Lighthouse badges and reports from one/multiple input URL-group(s) to one/multiple target repo(s)/branch(es) in parallel.
 
-Once you have it [set up](#-setups "Go there"), you only need to add the links to your results once in your use case (e.&nbsp;g. Github readme, website,...). The [Lighthouse-Badger](https://github.com/myactionway/lighthouse-badger-action "Get it") will then automatically keep the badges up to date for you. So sit back and let the Badger do the job :wink:.
+Once you have it [set up](#-setups "Go there"), you only need to add the links to the results once in your use case (e.&nbsp;g. Github readme, website,...). The [Lighthouse-Badger](https://github.com/myactionway/lighthouse-badger-action "Get it") will then automatically keep the results up to date for you. So sit back and let the Badger do the job :wink:.
+
+> **Warning**: **Don't embed your SVG badge files via URLs containing content hashes from GitHub. Otherwise, your badges will not automatically update in your use case** [[more info](#-known-issues--possible-solutions "Go there")].
 
 ## | Credits
 
@@ -322,6 +324,15 @@ That's it. Happy audits.
 </details>
 
 ## | Known issues & possible solutions
+* Your SVG badge file was not automatically updated in your use case.
+	* You embedded your SVG badge file via a URL containing a content hash from GitHub.
+		* e.&nbsp;g. `https://raw.githubusercontent.com/sitdisch/lighthouse-badges/b9c49bcf7e51ec55ef3d679111ee6b22dda68765/assets/img/scores/pagespeed.svg` has the content hash `b9c49bcf7e51ec55ef3d679111ee6b22dda68765`
+		* A badge embedded via such a URL will never be updated.
+		* You get such a URL when you hover over a SVG file in your GitHub repository + `Right Mouse Click` + `Copy Image Link`
+	* Instead, use a URL that includes the branch name where your badge is stored on GitHub.
+		* e.&nbsp;g. `https://raw.githubusercontent.com/sitdisch/lighthouse-badges/master/assets/img/scores/pagespeed.svg`
+		* here only the content hash `b9c49bcf7e51ec55ef3d679111ee6b22dda68765` is replaced by the branch name `master`
+		* A badge embedded via such a URL can be updated automatically.
 * No scores are displayed in the pagespeed.svg file.
 	* They are there, if not, NA is inserted. Try opening the SVG with a browser and the scores will pop up, I promise.
 * You get a failed job because not all remote commits were fetched during parallel computing.
