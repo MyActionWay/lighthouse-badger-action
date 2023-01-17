@@ -32,15 +32,15 @@ P.S. the badger and military medal icon are from the [googlefonts/noto-emoji](ht
 
 ### Pagespeed Badge
 
-<img src="https://raw.githubusercontent.com/sitdisch/lighthouse-badges/master/assets/img/scores/pagespeed.svg">
+<img src="https://raw.githubusercontent.com/sitdisch/lighthouse-badges/master/assets/img/scores/pagespeed.svg"/>
 
 ### Plastic Badges
 
-<img src="https://raw.githubusercontent.com/sitdisch/lighthouse-badges/master/assets/img/scores/lighthouse_performance.svg"> <img src="https://raw.githubusercontent.com/sitdisch/lighthouse-badges/master/assets/img/scores/lighthouse_accessibility.svg"> <img src="https://raw.githubusercontent.com/sitdisch/lighthouse-badges/master/assets/img/scores/lighthouse_best-practices.svg"> <img src="https://raw.githubusercontent.com/sitdisch/lighthouse-badges/master/assets/img/scores/lighthouse_seo.svg"> <img src="https://raw.githubusercontent.com/sitdisch/lighthouse-badges/master/assets/img/scores/lighthouse_pwa.svg">
+<img src="https://raw.githubusercontent.com/sitdisch/lighthouse-badges/master/assets/img/scores/lighthouse_performance.svg"/> <img src="https://raw.githubusercontent.com/sitdisch/lighthouse-badges/master/assets/img/scores/lighthouse_accessibility.svg"/> <img src="https://raw.githubusercontent.com/sitdisch/lighthouse-badges/master/assets/img/scores/lighthouse_best-practices.svg"/> <img src="https://raw.githubusercontent.com/sitdisch/lighthouse-badges/master/assets/img/scores/lighthouse_seo.svg"/> <img src="https://raw.githubusercontent.com/sitdisch/lighthouse-badges/master/assets/img/scores/lighthouse_pwa.svg"/>
 
 ### Single Plastic Badge
 
-<img src="https://raw.githubusercontent.com/sitdisch/lighthouse-badges/master/assets/img/scores/lighthouse.svg">
+<img src="https://raw.githubusercontent.com/sitdisch/lighthouse-badges/master/assets/img/scores/lighthouse.svg"/>
 
 ### Reports
 
