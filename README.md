@@ -326,12 +326,12 @@ That's it. Happy audits.
 ## | Known issues & possible solutions
 * Your SVG badge file was not automatically updated in your use case.
 	* You embedded your SVG badge file via a URL containing a content hash from GitHub.
-		* e.&nbsp;g. `https://raw.githubusercontent.com/sitdisch/lighthouse-badges/b9c49bcf7e51ec55ef3d679111ee6b22dda68765/assets/img/scores/pagespeed.svg` has the content hash `b9c49bcf7e51ec55ef3d679111ee6b22dda68765`
+		* e.&nbsp;g. `https://raw.githubusercontent.com/sitdisch/lighthouse-badges/94ff556d0d5a451a56839813e6322da811fce9f6/assets/img/scores/pagespeed.svg` has the content hash `94ff556d0d5a451a56839813e6322da811fce9f6`
 		* A badge embedded via such a URL will never be updated.
 		* You get such a URL when you hover over a SVG file in your GitHub repository + `Right Mouse Click` + `Copy Image Link`
 	* Instead, use a URL that includes the branch name where your badge is stored on GitHub.
 		* e.&nbsp;g. `https://raw.githubusercontent.com/sitdisch/lighthouse-badges/master/assets/img/scores/pagespeed.svg`
-		* here only the content hash `b9c49bcf7e51ec55ef3d679111ee6b22dda68765` is replaced by the branch name `master`
+		* here only the content hash `94ff556d0d5a451a56839813e6322da811fce9f6` is replaced by the branch name `master`
 		* A badge embedded via such a URL can be updated automatically.
 * No scores are displayed in the pagespeed.svg file.
 	* They are there, if not, NA is inserted. Try opening the SVG with a browser and the scores will pop up, I promise.
