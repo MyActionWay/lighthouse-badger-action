@@ -77,10 +77,20 @@ Generates, adds & updates manually/automatically Lighthouse badges & reports fro
 >	* [see how to do this in general](https://docs.github.com/en/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-a-repository "Learn how")
 >	
 >	* give the secret a name e.&nbsp;g. `LIGHTHOUSE_BADGER_TOKEN`
->	* the value of the secret must be the value of the personal access token for the repository where you want to add the Lighthouse results.
->		* [procedure for creating a personal access token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token "Learn how")
+>	* the value of the secret must be the value of the Personal Access Token (PAT) for the repository where you want to add the Lighthouse results
+>		* procedure for creating a [PAT (fine-grained)](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-fine-grained-personal-access-token "Learn how") or a [PAT (classic)](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-personal-access-token-classic "Learn how")
 >		
->		* select only the minimum scopes and permissions required e.&nbsp;g. repo
+>		* select only the minimum scopes and permissions required
+>			* PAT (fine-grained): repository permissions
+>			
+>				 * contents => access: read and write
+>				 
+>				 * metadata => access: read-only
+>				 
+>			* PAT (classic): e.&nbsp;g. repo
+>			
+>		* <b>CONSIDER</b>: [PAT expiration](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/token-expiration-and-revocation) requires you to regenerate the PAT and set it as the secret's value again
+>		
 >	* add the secret to the same repository where you added this workflow file
 > 
 > </details>
@@ -190,12 +200,22 @@ Generates, adds & updates manually/automatically Lighthouse badges & reports fro
 > 
 >	* [see how to do this in general](https://docs.github.com/en/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-a-repository "Learn how")
 >	
-> 	* give the secret a name e.&nbsp;g. `LIGHTHOUSE_BADGER_TOKEN`
-> 	* the value of the secret must be the value of the personal access token for the target repository where you want to add the Lighthouse results.
-> 		* [procedure for creating a personal access token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token "Learn how")
-> 		
-> 		* select only the minimum scopes and permissions required e.&nbsp;g. repo
-> 	* add the secret to the same repository where you added this workflow file
+>	* give the secret a name e.&nbsp;g. `LIGHTHOUSE_BADGER_TOKEN`
+>	* the value of the secret must be the value of the Personal Access Token (PAT) for the repository where you want to add the Lighthouse results
+>		* procedure for creating a [PAT (fine-grained)](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-fine-grained-personal-access-token "Learn how") or a [PAT (classic)](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-personal-access-token-classic "Learn how")
+>		
+>		* select only the minimum scopes and permissions required
+>			* PAT (fine-grained): repository permissions
+>			
+>				 * contents => access: read and write
+>				 
+>				 * metadata => access: read-only
+>				 
+>			* PAT (classic): e.&nbsp;g. repo
+>			
+>		* <b>CONSIDER</b>: [PAT expiration](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/token-expiration-and-revocation) requires you to regenerate the PAT and set it as the secret's value again
+>		
+> * add the secret to the same repository where you added this workflow file
 > 
 > </details>
 
@@ -314,10 +334,20 @@ Generates, adds & updates manually/automatically Lighthouse badges & reports fro
 >	* [see how to do this in general](https://docs.github.com/en/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-a-repository "Learn how")
 >	
 >	* give the secrets names e.&nbsp;g. `LIGHTHOUSE_BADGER_TOKEN_1` and `LIGHTHOUSE_BADGER_TOKEN_2`
->	* the values of the secrets must be the values of the personal access tokens for the target repositories where you want to add the Lighthouse results.
->		* [procedure for creating a personal access token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token "Learn how")
+>	* the values of the secrets must be the values of the Personal Access Tokens (PAT) for the repositories where you want to add the Lighthouse results
+>		* procedure for creating a [PAT (fine-grained)](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-fine-grained-personal-access-token "Learn how") or a [PAT (classic)](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-personal-access-token-classic "Learn how")
 >		
->		* select only the minimum scopes and permissions required e.&nbsp;g. repo
+>		* select only the minimum scopes and permissions required
+>			* PAT (fine-grained): repository permissions
+>			
+>				 * contents => access: read and write
+>				 
+>				 * metadata => access: read-only
+>				 
+>			* PAT (classic): e.&nbsp;g. repo
+>			
+>		* <b>CONSIDER</b>: [PAT expiration](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/token-expiration-and-revocation) requires you to regenerate the PAT and set it as the secret's value again
+>		
 >	* add the secrets to the same repository where you added this workflow file
 >
 > </details>
@@ -472,6 +502,28 @@ Generates, adds & updates manually/automatically Lighthouse badges & reports fro
 > 	* A badge embedded via such a URL can be updated automatically.
 > 
 ></details>
+
+> <details><summary><b><i>"Error: fatal: could not read Username for '<span>h</span>ttps://github.com': terminal prompts disabled":</i></b></summary>
+> 
+> <p>
+> 
+> * your [personal access token may has expired](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/token-expiration-and-revocation) and you need to set a new one as the value of the encrypted repository secret; that means back to the [setup section](#-setups "Go there")
+> 
+> * more information about this GitHub action checkout issue can be found e.&nbsp;g. [here](https://github.com/actions/checkout/issues/664)
+> 
+> </p>
+> 
+> </details>
+
+> <details><summary><b><i>"remote: Permission to ... denied to ... fatal: unable to access '<span>h</span>ttps://github.com/...': The requested URL returned error: 403":</i></b></summary>
+> 
+> <p>
+> 
+> * your personal access token used does not have the minimum scopes/permissions required to add the Lighthouse results to your target repository
+> 
+> </p>
+> 
+> </details>
 
 > <details><summary><b>No scores are displayed in the pagespeed.svg file:</b></summary>
 > 
