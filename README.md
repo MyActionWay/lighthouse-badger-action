@@ -535,6 +535,18 @@ Generates, adds & updates manually/automatically Lighthouse badges & reports fro
 > 
 > </details>
 
+> <details><summary><b>You get a failed job because it exceeded the maximum execution time:</b></summary>
+> 
+> <p>
+> 
+> * increase `timeout-minutes` in your workflow file (default = 8min)
+>
+> * if that doesn't help, maybe it is a lighthouse issue
+>
+> </p>
+> 
+> </details>
+
 > <details><summary><b>You get a failed job because not all remote commits were fetched during parallel computing:</b></summary>
 > 
 > <p>
