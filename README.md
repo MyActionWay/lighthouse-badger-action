@@ -485,6 +485,11 @@ Generates, adds & updates manually/automatically Lighthouse badges & reports fro
 
 <br>
 
+
+> <b>**Warning**: If you use your own workflow file, it is highly recommended to set a time limit for the job execution ([GitHub's default](https://docs.github.com/en/actions/learn-github-actions/usage-limits-billing-and-administration#usage-limits): 6 hours); default in the [proposed workflow files](https://github.com/MyActionWay/lighthouse-badger-workflows/tree/main/.github/workflows) `timeout-minutes: 8`
+
+<br>
+
 ## | Known issues & possible solutions
 
 > <details><summary><b>Your SVG badge file was not automatically updated in your use case:</b></summary>
@@ -539,7 +544,7 @@ Generates, adds & updates manually/automatically Lighthouse badges & reports fro
 > 
 > <p>
 > 
-> * increase `timeout-minutes` in your workflow file (default = 8min)
+> * increase `timeout-minutes` in your workflow file (default in the [proposed workflow files](https://github.com/MyActionWay/lighthouse-badger-workflows/tree/main/.github/workflows) = 8min)
 >
 > * if that doesn't help, maybe it is a lighthouse issue
 >
